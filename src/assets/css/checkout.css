@@ -1,0 +1,95 @@
+#checkout-container{
+     margin: auto;
+     height: auto;
+     width: auto;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 2rem;
+     
+}
+
+#checkout-container img{
+     min-width: 280px;
+     height: 250px;
+}
+
+
+.flex-me{
+     display: flex;
+     gap: 3rem;
+}
+
+
+.column-me1{
+     display: flex;
+     flex-direction: column;
+     gap: 2.5px;
+}
+
+.column-me2{
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     gap: 2.5px;
+
+}
+
+
+.column-me1 label:nth-child(4){
+     margin-top: 1rem;
+     padding-top: 0.5rem;
+     font-size: 15px;
+}
+
+
+
+
+
+.column-me2 h4:nth-child(4){
+     
+     margin-top: 1rem;
+     padding-top: 0.5rem;
+     font-size: 18px;
+
+   }
+
+   #checkout-container button{
+     width: 105px;
+     border-radius: 5px;
+     font-size: 14px;
+     margin-top: 1rem
+   }
+
+
+   .cancel{
+     text-align: center;
+     padding-right: 35rem;
+     margin-top: 2rem;
+     margin-bottom: 3rem;
+     cursor: pointer;
+   }
+
+   @media(max-width:577px){
+     .cancel{
+          font-size: 16px;
+          padding-right: 0;
+          margin-top: 0;
+          margin-bottom: 2rem;
+     }
+   }
+
+   .erroradmin{
+     text-align: center;
+     padding: 14px;
+     font-family: 'Noto Sans', sans-serif;
+     color: crimson;
+     font-size: 12px;
+     font-weight: bold;
+     background-color: rgba(255, 240, 240, 0.87);
+     transform: translateY(-95px);
+     border: 0.5px solid rgba(206, 116, 134, 0.349);
+     border-radius: 10px;
+     width: 150px;
+     margin: auto;
+   }

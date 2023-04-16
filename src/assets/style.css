@@ -1,0 +1,388 @@
+:root{
+  --main: white;
+  --sub: rgba(245, 245, 245, 0.95);
+  background-color: rgba(247, 247, 247, 0.5);
+  
+  }
+  
+  
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rokkitt', serif;
+    scroll-behavior: smooth;
+  }
+  
+  label{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    color: rgba(39, 37, 37, 0.877);
+  }
+  
+  input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(231, 227, 227, 0.534);
+    border-radius: 3px;
+    padding-left: 9px;
+    font-size: 13px;
+    letter-spacing: 0.75px;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  textarea{
+    min-height: 50px;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    border: 1px solid rgba(231, 227, 227, 0.534);
+    border-radius: 3px;
+    resize: none;
+
+  }
+
+  textarea:focus{
+    outline-width: 0;
+  }
+  
+  input:focus {
+    outline-width: 0;
+  }
+  
+  input[type="password"]{
+      letter-spacing: 2px;
+  }
+  
+  button{
+    height: 30px;
+    margin-bottom: 7px;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    padding: 0 5px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    
+  }
+  
+  button:hover{
+    
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .container{
+    min-height: 95vh;
+    background-color: white;
+    max-width: 1500px;
+    margin:auto;
+    padding-top: 3rem;
+    border-radius: 3px;
+  }
+
+  @media(max-width:820px){
+          nav{
+            position: fixed;
+            top: 0;
+            z-index: 123;
+          }
+
+          .container{
+            margin-top: 3rem;
+         }
+      }
+
+  @media(max-width:414px){
+         label{
+          font-size: 12px;
+        }
+        h4{
+          font-size: 15px;
+        }
+        
+        input{
+          height: 30px;
+          font-size: 10px;
+        }
+        button{
+          height: 25px;
+          font-size: 10px;
+          
+        }
+
+        span{
+          font-size: 14px;
+        }
+        
+        
+     
+        
+  }
+
+  @media(max-width:404px){
+    h4{
+      font-size: 12px;
+    }
+    label{
+      font-size: 11px;
+    }
+  
+  }
+
+  .error{
+    color: crimson;
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    width: 100%;
+    background-color: rgba(255, 240, 240, 0.87);
+    border-radius: 10px;
+    padding: 14px;
+    border: 0.5px solid rgba(206, 116, 134, 0.349);
+
+  }
+  .text-field-with-error {
+    box-shadow: 0px 0px 3px rgba(216, 26, 26, 0.658);
+}
+  .error2{
+    color: crimson;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+
+  ::placeholder {
+    font-family: 'Play', sans-serif;
+    color: lightgray;
+    font-size: 13px;
+    letter-spacing: 0;
+   
+  }
+
+#disabled-btn:hover{
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  cursor: not-allowed;
+} 
+
+
+
+#disabled-btn2:hover{
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  cursor: not-allowed;
+} 
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+
+.toastBody{
+  color: rgba(26, 26, 26, 0.877);
+  font-size: 16px;
+  font-weight: bold;
+}
+a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.console-label{
+  font-family: 'Rokkitt', serif;
+  color: #5d9ecf;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.console-notstring{
+color: rgba(149, 97, 247, 0.918);
+font-size: 12px;
+font-family: 'Noto Sans', sans-serif;
+}
+
+.console-string{
+  color: rgb(35, 199, 191);
+  font-family: 'Play', sans-serif;
+  font-size: 13px;
+}
+
+
+.edit-product-input{
+  max-width: 260px;
+  height: 28px;
+  font-size: 12px;
+}
+
+@media(max-width:414px){
+  .edit-product-input{
+    max-width: 200px;
+    height: 25px;
+    font-size: 11px;
+  }
+}
+
+
+#disabledbutton1{
+  color: white;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: rgb(124, 124, 124);
+}
+
+#disabledbutton2{ 
+    color: white;
+    text-decoration: none;
+    cursor: not-allowed; 
+    background-color: rgb(124, 124, 124);
+}
+
+#disabledbutton1:hover{
+  background-color: rgb(124, 124, 124);
+ 
+}
+
+#disabledbutton2:hover{
+  background-color: rgb(124, 124, 124);
+ 
+}
+
+.product-image{
+  width: auto;
+  height: 200px;
+}
+
+.product-detail{
+  display: flex;
+  margin: 0 13px;
+  margin-bottom: 0.3rem;
+}
+
+.product-detail h3{
+  font-size: 23px;
+}
+
+
+.product-style{
+  font-family: 'Raleway', sans-serif!important;
+  flex-grow: 1;
+ 
+}
+
+.product-card>h5{
+  font-size: 16px;
+}
+
+
+#detail-btn{
+
+  width: 75px;
+  font-size: 12.5px;
+  letter-spacing: 1px;
+  font-weight: bold!important;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.order-container{
+  width: 500px;
+  margin: auto;
+}
+
+.order-container h1{
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.order-container p{
+  margin-top: 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+}
+
+.order-container h1 img{
+  height: 35px;
+  width: 35px;
+  transform: translateY(5px);
+}
+
+.order-container h4{
+  margin-top: 5rem;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  width: 91px;
+  float: right;
+}
+
+.order-container h4:hover{
+  color: steelblue;
+}
+
+
+@media(max-width:556px){
+  .order-container{
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .order-container p{
+    text-align: justify;
+    margin: 2rem;
+  }
+
+  .order-container h4{
+
+    width: 91px;
+
+  }
+}
+
+@media(max-width: 400px){
+
+  .order-container h4{
+
+    width: 70px;
+
+  }
+
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #55a8fb;
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #70b7ff;
+}
+
+
+.construction{
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 36px;
+}

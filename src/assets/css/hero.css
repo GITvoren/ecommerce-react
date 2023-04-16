@@ -1,0 +1,74 @@
+.hero-wrapper{
+     background-image: url("../images/pexels-avinash-patel-1178525.png");
+     color: white;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 73vh;
+}
+
+.hero-text{
+
+     padding-top: 16rem;
+     padding-left: 7rem;
+}
+
+.hero-text h1{
+     font-size: 3.75rem;
+     font-family: 'Francois One', sans-serif;
+
+}
+
+.hero-text h2{
+     font-size: 1.75rem;
+     font-family: 'Noto Sans JP', sans-serif;
+   
+}
+
+.hero-btn{
+     background: rgba(255,255,255, 0);
+     border-radius: 0;
+     border: 2.5px solid white;
+     letter-spacing: 2px;
+     font-size: 16px;
+     height: 100%;
+     padding: 0.5rem 0.75rem;
+     width: 150px;
+     font-family: 'Noto Sans JP', sans-serif;
+     margin-top: 5rem;
+}
+
+@media(max-width:834px){
+     .hero-wrapper{
+          background-image: url("../images/medium.png");
+          color: white;
+          background-repeat: repeat;
+          max-width: 100%;
+          height: auto;
+     }
+
+     .hero-text{
+          text-align: center;
+          padding-top: 10rem;
+          padding-right: 5rem;
+     }
+     .hero-text h1{
+          font-size: 2rem;
+          padding-bottom: 4rem;
+          
+     
+     }
+     
+     .hero-text h2{
+          font-size: 1rem;
+          
+        
+     }
+
+     .hero-btn{
+   
+          font-size: 12px;
+          margin-top: 1rem;
+     }
+
+     
+}

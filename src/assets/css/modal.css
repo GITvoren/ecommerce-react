@@ -1,0 +1,198 @@
+body.active-modal {
+     overflow-y: hidden;
+ }
+ 
+ 
+
+ 
+ .modal, .overlay {
+     width: 100vw;
+     height: 100vh;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     position: fixed;
+ }
+ 
+ .overlay {
+     background: rgba(49,49,49,0.8);
+ }
+ 
+
+ .modal-card{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    background: white;
+    width: 850px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.modal-close{
+    position: absolute;
+    right: 0;
+    font-size: 23px;
+    padding: 2px;
+    padding-right: 5px;
+    color: rgb(212, 212, 212);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(194, 194, 194, 0.75);
+    z-index: 123;
+    cursor: pointer;
+}
+
+
+
+.view-product-image{
+    height: 350px;
+    width: 350px;
+}
+
+
+
+
+.view-panel{
+    display: flex;
+}
+
+.view-right-panel{
+    background-color: var(--main);
+    height: 350px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.view-right-panel>p{
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif!important;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.view-right-panel>h3{
+    
+    font-size: 25px;
+    
+}
+
+
+
+
+
+.view-product-style{
+    font-family: 'Raleway', sans-serif!important;
+    font-size: 20px;
+     
+}
+
+.add-to-cart-btn{
+    font-size: 15px;
+    height: 35px;
+    width: 105px;
+    border-radius: 3px;
+}
+
+@media(max-width: 860px){
+    .view-product-image{
+        display: none;
+    }
+
+    .modal-card{
+        width: 500px;
+    }
+}
+
+
+@media(max-width: 500px){
+
+    .modal-card{
+        
+        width: 400px;
+    }
+}
+
+
+@media(max-width: 400px){
+
+    .modal-card{
+        
+        width: 360px;
+        height: 380px;
+    }
+
+    .view-right-panel>p{
+        font-size: 15px;
+    }
+    
+    .view-right-panel>h3{
+        
+        font-size: 18px;
+        
+    }
+    .view-right-panel>h5{
+        
+        font-size: 18px;
+        
+    }
+    .add-to-cart-btn{
+        font-size: 13px;
+        height: 30px;
+        width: 115px;
+        border-radius: 3px;
+    }
+}
+
+
+.quantity-btn{
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif!important;
+    
+}
+
+.increment-div{
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    right: 46%;
+    align-items: center;
+}
+
+
+.increment-btn{
+    font-size: 10px;
+    color: rgba(87, 86, 86, 0.829);
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media(max-width:860px){
+    .increment-div{
+        position: absolute;
+        bottom: 5%;
+        right: 70%;
+        align-items: center;
+    }
+}
+
+@media(max-width: 400px){
+    .increment-div{
+        position: absolute;
+        bottom: 12%;
+        right: 70%;
+    }
+}

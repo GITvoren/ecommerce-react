@@ -1,0 +1,163 @@
+nav *{
+     font-family: 'Play', sans-serif;
+     font-weight: bold;
+     text-decoration: none;
+}
+
+nav{
+     width: 100%;
+     background: var(--main);
+     padding: 3px;
+     border-bottom: 7px solid black;
+     
+}
+
+ul{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 0;
+     padding-right: 1rem;
+}
+
+
+.nav-logo{
+
+     height: 50px;
+     width: 150px;
+}
+
+
+
+ul div:nth-child(2){
+     display: flex;
+     list-style: none;
+     gap: 4rem;
+     
+}
+
+.nav-list{
+     text-decoration: none;
+     color: black;
+     font-size: 13px;
+     letter-spacing: 1px;
+}
+
+.nav-list:hover{
+     border-bottom: 1px solid black;
+     padding-bottom: 1px;
+}
+
+.nav-admin span:hover{
+     border-bottom: 1px solid black;
+     padding-bottom: 1px;
+}
+
+.nav-admin-icon{
+     display: flex;
+     align-items: center;
+     color: black;
+     font-size: 20px;
+}
+
+.nav-admin-icon span{
+     font-size: 13px;
+     color: black;
+}
+
+ul div:last-child{
+     display: flex;
+     gap: 1.5rem;
+     align-items: center;
+}
+
+
+.nav-icon{
+
+     display: flex;
+     text-decoration: none;
+     align-items: center;
+     font-size: 20px;
+     color: black;
+
+}
+
+
+
+.nav-icon span{
+     font-size: 13px;
+     color: black;
+}
+
+
+
+.nav-icon:hover{
+     transform: scale(1.25);
+}
+     
+
+.nav-toggle{
+	font-size: 25px;
+     display: none;
+
+}
+
+
+@media(max-width: 840px){
+
+     nav{
+          border-bottom: 6px solid black;
+     }
+
+     ul div:nth-child(2){
+		flex-direction: column;
+          gap: 2rem;
+		width: 99%;
+		position: fixed;
+		top: -200%;
+		padding: 2rem 0;
+		transition: all 0.5s;
+          background-color: rgba(255, 255, 255, 0.85);
+          border: 2px solid rgba(0, 0, 0, 0.685);
+       
+          
+	}
+
+     ul div:nth-child(2) li{
+          text-align:center;
+          border-bottom: 1px solid gainsboro;
+          padding-bottom: 2rem;
+     }
+
+     .nav-admin{
+          align-self: center;
+          margin-right: 25px;
+          letter-spacing: 1px;
+     }
+
+     ul div:nth-child(2) li:last-child{
+          text-align: center;
+          border-bottom: 0px solid gainsboro;
+          padding-bottom: 0rem;
+     }
+
+
+     .nav-toggle{
+          display: block;
+     }
+
+     .nav-icon span{
+          display: none;
+     }
+
+     ul div:last-child{
+          gap: 1rem;
+     }
+          
+}
+
+@media(max-width: 1366px){
+     ul div:first-child{
+          flex-basis: 10%;
+     }
+}

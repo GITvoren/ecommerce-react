@@ -1,0 +1,50 @@
+.login-container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     max-width: 100%;
+     gap: 3rem;
+/*      margin: 3rem 5rem;
+     padding: 3rem 0;
+     background-color: white; */
+}
+
+.login-form{
+     display: flex;
+     flex-direction: column;
+     gap: 13px;
+     width: 350px;
+}
+
+
+.login-form div:last-child button{
+     height: 40px;
+     width: 100%;
+     margin-bottom: 7px;
+     font-family: 'Play', sans-serif;
+     font-size: 12px;
+     letter-spacing: 1.5px;
+     font-weight: bold;
+}
+
+.login-form div:last-child button:first-child{
+     background-color: black;
+     color: white;   
+}
+
+.login-form div:last-child button:first-child:hover{
+     background-color: white;
+     color: black;    
+}
+
+.login-form div:last-child button:last-child{
+     background-color: white;
+     color: black; 
+}
+
+.login-form div:last-child button:last-child:hover{
+     background-color: black;
+     color: white;       
+}
+
+
