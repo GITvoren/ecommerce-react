@@ -26,7 +26,8 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - Set quantity of product to buy
 - Checkout order (authenticated non-admin users only)
 
-##Built with
+
+## Built with
 
 [Figma](https://figma.com/)
 [React](https://reactjs.org/)
