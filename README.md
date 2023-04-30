@@ -1,6 +1,6 @@
 # Ecommerce React App
 
-This project is an Ecommerce website app built using the MERN stack. Note** This repository is its frontend. The repository link to its backend API is [this](https://github.com/GITvoren/ecommerce-api):point_left:
+This project is an Ecommerce website app built using the MERN stack. <small>Note** This repository is its frontend. The repository link to its backend API is [this](https://github.com/GITvoren/ecommerce-api):point_left: </small>
 
 [Live Demo](https://voren-ecommerce-app.vercel.app/). :point_left:
 
