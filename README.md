@@ -4,7 +4,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 ###### Note** This repository is its frontend. The repository link to its backend API is [this](https://github.com/GITvoren/ecommerce-api). :point_left:
 <br/>
 
-### Here is a live demo of the project (hosted on vercel):
+#### Here is a live demo of the project (hosted on vercel):
 [Live Demo](https://voren-ecommerce-app.vercel.app/):point_left:
 
 
