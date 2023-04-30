@@ -10,7 +10,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 
 
-## Features:
+## Features
 - Register user to the database
 - Authenticate user login
 
@@ -40,7 +40,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - [Vercel](https://vercel.com/)
 
 
-## Upcoming features:
+## Upcoming features
 - Add to Cart
 - Set user as admin (admin only)
 
