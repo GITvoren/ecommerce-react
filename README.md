@@ -37,7 +37,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - [NodeJS](https://nodejs.org/en)
 - [ExpressJS](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
-- Vanilla CSS
+- CSS
 - Javascript
 
 
