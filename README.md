@@ -29,7 +29,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 ## Built with
 
-- [Figma](https://figma.com/)
+
 - [React](https://reactjs.org/)
 - [My Ecommerce API](https://github.com/GITvoren/ecommerce-api)
 - [React Router](https://reactrouter.com/)
@@ -39,6 +39,8 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - [MongoDB](https://www.mongodb.com/)
 - CSS
 - Javascript
+- [Figma](https://figma.com/)
+- [Vercel](https://vercel.com/)
 
 
 ## Upcoming features:
