@@ -15,6 +15,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - Authenticate user login
 
 - Admin Dashboard (For Admin Users Only)
+###### if you want to test this, use this dummy admin account- email: admin@mail.com ; pass: qwerasdf
   - Add New Product
   - Edit Product Details
   - View All Products
