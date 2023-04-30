@@ -20,7 +20,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
   - View All Products
   - Archive Product
   - Activate Product
- ###### Note** To access the Admin Dashboard, try using this dummy admin account- email: admin@mail.com ; pass: qwerasdf
+ ###### Note** To access the Admin Dashboard features, try using this dummy admin account- email: admin@mail.com ; pass: qwerasdf
 
 - View all active products
 - Set quantity of product to buy
@@ -44,4 +44,6 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - Add to Cart
 - Set user as admin (admin only)
 
+## Feedback
+If you encounter any errors or bugs, have a suggestion, or if you have any question, please dont hesitate to contact me. Thank you very much!
 
