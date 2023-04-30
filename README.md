@@ -33,7 +33,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - [React](https://reactjs.org/)
 - [My Ecommerce API](https://github.com/GITvoren/ecommerce-api)
 - [React Router](https://reactrouter.com/)
-- [React Toastify](https://www.npmjs.com/package/react-toastify)
+- [React-Toastify](https://www.npmjs.com/package/react-toastify)
 - CSS
 - Javascript
 - [Figma](https://figma.com/)
