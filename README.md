@@ -37,6 +37,9 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - CSS
 - Javascript
 - [Figma](https://figma.com/)
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
+- [Canva](https://www.canva.com/en_ph/)
 - [Vercel](https://vercel.com/)
 
 
