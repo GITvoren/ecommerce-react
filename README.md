@@ -29,16 +29,16 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 ## Built with
 
-[Figma](https://figma.com/)
-[React](https://reactjs.org/)
-[My Ecommerce API](https://github.com/GITvoren/ecommerce-api)
-[React Router](https://reactrouter.com/)
-[React Toastify](https://www.npmjs.com/package/react-toastify)
-[NodeJS](https://nodejs.org/en)
-[ExpressJS](https://expressjs.com/)
-[MongoDB](https://www.mongodb.com/)
-Vanilla CSS
-Javascript
+- [Figma](https://figma.com/)
+- [React](https://reactjs.org/)
+- [My Ecommerce API](https://github.com/GITvoren/ecommerce-api)
+- [React Router](https://reactrouter.com/)
+- [React Toastify](https://www.npmjs.com/package/react-toastify)
+- [NodeJS](https://nodejs.org/en)
+- [ExpressJS](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- Vanilla CSS
+- Javascript
 
 
 ## Upcoming features:
