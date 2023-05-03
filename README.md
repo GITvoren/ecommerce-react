@@ -20,12 +20,15 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
   - View All Products
   - Archive Product
   - Activate Product
- ###### Note** To access the Admin Dashboard features, try using this dummy admin account- email: admin@mail(dot)com ; pass: qwerasdf
-
+  
 - View all active products
 - Set quantity of product to buy
 - Checkout order (authenticated non-admin users only)
 
+### Admin Dashboard Screenshots
+[![HSc5DNt.md.png](https://iili.io/HSc5DNt.md.png)](https://freeimage.host/i/HSc5DNt)
+[![HSc5ZHN.md.png](https://iili.io/HSc5ZHN.md.png)](https://freeimage.host/i/HSc5ZHN)
+[![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](https://freeimage.host/i/HSc5tRI)
 
 ## Built with
 
