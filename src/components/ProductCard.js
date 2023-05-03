@@ -17,13 +17,13 @@ function ProductCard({activeproductdata}){
           }
      }
 
-     const {name, price, _id} = activeproductdata
+     const {name, price, _id, url} = activeproductdata
 
 
      return(
 
                <div className="product-card">
-                    <img className="product-image" src={pr300x200} alt="productname"></img>
+                    <img className="product-image" src={url} alt="product img"></img>
 
                     <h5 className="product-style">&nbsp;&nbsp;&nbsp;&nbsp;{name}</h5>
                     <div className="product-detail">        

@@ -10,6 +10,7 @@ function CheckOut(){
      const {quantity} = useParams();
      const [name, setName] = useState("");
      const [price, setPrice] = useState(0);
+     const [url, setUrl] = useState(0);
      const [totalAmount, setTotalAmount] = useState(0);
      const [errorMessage, setErrorMessage] = useState("")
      const navigate = useNavigate();
@@ -21,6 +22,7 @@ function CheckOut(){
           .then(data => {
                setName(data.name);
                setPrice(data.price);
+               setUrl(data.url);
                setTotalAmount(data.price * quantity);
           })
      })
@@ -62,7 +64,7 @@ function CheckOut(){
             (<p className="erroradmin"> {errorMessage} </p>)
             }
                <div id="checkout-container">
-                    <img src={pr280x250} alt="img"></img>
+                    <img src={url} alt="product img"></img>
 
                     <div className="flex-me">
                          <div className="column-me1">

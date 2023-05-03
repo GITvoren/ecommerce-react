@@ -11,6 +11,7 @@ function ViewProductDetails(){
      const [name, setName] = useState("")
      const [description, setDescription] = useState("")
      const [price, setPrice] = useState(0)
+     const [url, setUrl] = useState("")
      const [id, setId] = useState("")
      const [quantity, setQuantity] = useState(1)
      const [ modal, setModal ] = useState(true);
@@ -30,6 +31,7 @@ function ViewProductDetails(){
           .then(data => {
                setName(data.name)
                setPrice(data.price)
+               setUrl(data.url)
                setDescription(data.description)
                setId(data._id)
               
@@ -60,14 +62,13 @@ function ViewProductDetails(){
                                    <i className="modal-close fa fa-times" onClick={ () => {navigate(-1); toggleModal(); }}></i>
 
                                    <div className="view-panel">
-                                        <img className="view-product-image" src={product} alt="productname"></img>
+                                        <img className="view-product-image" src={url} alt="product image"></img>
   
                                         <div className="view-right-panel">
                                         
                                              <h5 className="view-product-style">&nbsp;&nbsp;&nbsp;&nbsp;{name}</h5>
                                              <p>
-                                                  {description} <br /><br />
-                                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum voluptate
+                                                  {description}
                                              </p>
                                              
                                              <h3 className="view-product-style">&#8369;{price}</h3>
