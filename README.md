@@ -28,14 +28,11 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 ## Admin Dashboard Screenshots
 
-View All Products
-...[![HSc5DNt.md.png](https://iili.io/HSc5DNt.md.png)](https://freeimage.host/i/HSc5DNt)
+View All Products <br/> [![HSc5DNt.md.png](https://iili.io/HSc5DNt.md.png)](https://freeimage.host/i/HSc5DNt)
 
-Add New Product
-...[![HSc5ZHN.md.png](https://iili.io/HSc5ZHN.md.png)](https://freeimage.host/i/HSc5ZHN)
+Add New Product <br/> [![HSc5ZHN.md.png](https://iili.io/HSc5ZHN.md.png)](https://freeimage.host/i/HSc5ZHN)
 
-Edit Product Details
-...[![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](https://freeimage.host/i/HSc5tRI)
+Edit Product Details <br/> [![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](https://freeimage.host/i/HSc5tRI)
 
 ## Built with
 
