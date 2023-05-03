@@ -25,7 +25,8 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - Set quantity of product to buy
 - Checkout order (authenticated non-admin users only)
 
-### Admin Dashboard Screenshots
+
+## Admin Dashboard Screenshots
 
 View All Products
 - [![HSc5DNt.md.png](https://iili.io/HSc5DNt.md.png)](https://freeimage.host/i/HSc5DNt)
