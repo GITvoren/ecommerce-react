@@ -5,7 +5,7 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 #### [Live Demo](https://detour-ecommerce.vercel.app/):point_left: (hosted on [Vercel](https://vercel.com/))
 
-**API is hosted on a free tier version on [Render](https://render.com/). Fetching of data will be a little slow 😅**
+###### API is hosted on a free tier version on [Render](https://render.com/). Fetching of data will be a little slow 😅
 
 
 
