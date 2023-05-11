@@ -36,7 +36,7 @@ Add New Product <br/> [![HSc5ZHN.md.png](https://iili.io/HSc5ZHN.md.png)](https:
 
 Edit Product Details <br/> [![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](https://freeimage.host/i/HSc5tRI)
 
-Archive/Activate Product (gif) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/HSccTgf)
+Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/HSccTgf)
 
 ## Built with
 
