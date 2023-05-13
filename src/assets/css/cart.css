@@ -1,0 +1,110 @@
+.overlay2, .modal2{
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     position: fixed;
+     background: rgba(65, 65, 65, 0.179);
+     
+ }
+
+ .modal2{
+     overflow: auto;
+ }
+
+ .cart-container{
+    position: absolute;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    background: white;
+    width: 350px;
+    min-height: 100vh;
+    border-radius: 3px;
+    
+}
+
+.cart-container .checkout-btn-cart{
+     text-align: center;
+     margin-top: 2rem
+}
+
+
+
+.cart-container h3{
+     font-family: 'Play', sans-serif;
+     text-align: center;
+}
+
+.cart-container h3 span{
+     font-family: 'Play', sans-serif;
+     font-weight: 300;
+}
+
+.cart-close{
+    position: absolute;
+    right: 1%;
+    font-size: 23px;
+    padding: 2px;
+    padding-right: 5px;
+    color: rgb(212, 212, 212);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(194, 194, 194, 0.75);
+    z-index: 123;
+    cursor: pointer;
+}
+
+.cart-container h2{
+     padding: 8px;
+     font-family: 'Play', sans-serif;
+     font-size: 20px;
+}
+
+.cart-itemlist{
+     display: flex;
+     flex-direction: column;
+     overflow: auto;
+}
+
+/* CartItem  start*/
+.cart-item{
+     margin: 8px 1rem;
+     border-bottom: 1px solid gainsboro;
+    
+}
+.cart-item h4{
+     margin: 8px 0;
+     font-family: 'Play', sans-serif;
+}
+
+.cart-item h4:last-child{
+     text-align: center;
+     margin-bottom: 1rem;
+     
+}
+
+.image-increment-flexrow{
+     display: flex;
+     justify-content: space-around;
+}
+
+.image-increment-flexrow img{
+     width: 100px;
+     height: 100px;
+     
+}
+.increment-div2{
+     display: flex;
+     align-items: center;
+ }
+
+
+/* CartItem  end*/
+
+.cart-bottom{
+     position: absolute;
+     bottom: 1rem;
+     left: 0;
+     right: 0;
+}

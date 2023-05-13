@@ -27,6 +27,8 @@ import ViewProductDetails from './components/ViewProductDetails.js'
 import CheckOut from './pages/CheckOut.js'
 import OrderSuccess from './utilities/OrderSuccess.js'
 import MemberRoutes from './utilities/MemberRoutes.js'
+import Cart from './pages/Cart.js'
+import {CartProvider} from './utilities/CartContext.js'
 
 
 
@@ -108,9 +110,10 @@ function App() {
  
      <>
       <UserContext.Provider value={{user, setUser, unsetUser}}>
+        <CartProvider>
         
           <Navbar />
-            <Routes>
+            <Routes location={background || location}>
               <Route exact path="/" element={<Home />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
@@ -130,10 +133,37 @@ function App() {
                   <Route path="/accounts/login" element={<Login/>} />
                   <Route path="/accounts/register" element={<Register/>} />
               </Route>
-        
+              <Route exact path="/products" element={<Products/>} />
+             
+             
+      
+              
               <Route path="/logout" element={<Logout />}/>
             </Routes>
-            <ToastContainer
+            
+             
+                
+           
+              <Routes>
+                <Route element={<MemberRoutes/>}>
+                      <Route path="/products/:productId/:quantity/order" element={<CheckOut />} />
+                      <Route path="/ordersuccess" element={<OrderSuccess />} />
+                </Route>
+              </Routes>
+          
+            
+              <Routes>
+                  <Route path="/products/:productId" element={<ViewProductDetails />} />     
+              </Routes>  
+
+              <Routes>
+               <Route path="/cart" element={<Cart/>} />
+              </Routes>
+         
+
+        </CartProvider>
+      </UserContext.Provider>
+      <ToastContainer
         className="toastBody"
         position="top-right"
         autoClose={750}
@@ -146,27 +176,6 @@ function App() {
         pauseOnHover={false}
         theme="light"
         />
-             <Routes location={background || location}>
-                <Route exact path="/products" element={<Products/>} >
-                    <Route path="/products/:productId" element={<ViewProductDetails />} />
-                </Route>
-             </Routes>
-              <Routes>
-                <Route element={<MemberRoutes/>}>
-                      <Route path="/products/:productId/:quantity/order" element={<CheckOut />} />
-                      <Route path="/ordersuccess" element={<OrderSuccess />} />
-                </Route>
-              </Routes>
-          
-            {background && (
-              <Routes>
-                  <Route path="/products/:productId" element={<ViewProductDetails />} />     
-              </Routes>  
-           )}
-
-
-      </UserContext.Provider>
-      
     </>
   );
 }

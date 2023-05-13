@@ -1,5 +1,5 @@
 import navbar from '../assets/css/navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import { useRef, useContext } from 'react';
 import UserContext from '../utilities/UserContext.js';
@@ -11,8 +11,9 @@ function AppNavbar(){
      const { user } = useContext(UserContext)
      const ref = useRef(null);
      const ref2 = useRef(null);
-     
+     const location = useLocation()
      let Toggled = false
+     
      const toggle = (e) =>{
           e.preventDefault()
           const navList = ref.current
@@ -68,7 +69,7 @@ function AppNavbar(){
                          :
                          <Link to="/accounts/login"><i className="nav-icon fa fa-user-o"><span>&nbsp;ACCOUNT</span></i></Link>
                          }
-                          {/* <Link><i className="nav-icon fa fa-opencart"><span>&nbsp;CART</span></i></Link> */}
+                          <Link to="/cart" state={{ background: location }}><i className="nav-icon fa fa-opencart"><span>&nbsp;CART</span></i></Link>
                          <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
                          
                     </div>
