@@ -1,15 +1,35 @@
 import '../assets/css/cart.css'
 import CartContext from '../utilities/CartContext.js'
-import {useContext, useState} from 'react';
+import {useContext, useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
+import pr300x200 from '../assets/images/pr300x200.png';
 import CartItem from '../components/CartItem.js'
 
 
 
 function Cart(){
-     const {item} = useContext(CartContext);
      const navigate = useNavigate();
+     const [quantity, setQuantity] = useState(1)
+     const {items} = useContext(CartContext)
+     const [cartItems, setCartItems] = useState([])
 
+     
+
+
+
+     useEffect(()=>{
+          setCartItems(items.map((item)=>{
+               
+               
+               return(
+                    <CartItem key={item._id} itemdata= {item} />
+               )
+          }))
+     }, [])
+   
+
+ 
+ 
 
 
      return(
@@ -17,19 +37,17 @@ function Cart(){
                     <div className="overlay2" onClick = {()=> navigate(-1)}></div>  
                          <div className="cart-container">
                          <i className="cart-close fa fa-times" onClick={() => navigate(-1)} />
-                              <h2>Total items in Cart ({item})</h2>
+                              <h2>Cart</h2>
                               <br />
                                    <div className="cart-itemlist">
-                                        <CartItem/>
-                                        <CartItem/>
+       
+                                        {cartItems}
+               
+                                    
                                    </div>
-                                   <br /><br /><br /><br /><br /><br /><br />
-                                   <div className="cart-bottom">
-                                        <h3>Total Amount: <span>P13212</span></h3>
-                                        <div className="checkout-btn-cart">
-                                             <button>CHECKOUT</button>
-                                        </div>
-                                   </div>
+                                  
+                             
+                                   
                          </div>
                     </div>
                  

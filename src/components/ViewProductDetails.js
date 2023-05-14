@@ -1,12 +1,13 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
 import product from '../assets/images/product.PNG';
 import '../assets/css/modal.css'
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import CheckOut from '../pages/CheckOut.js'
+import CartContext from '../utilities/CartContext.js'
 
 
 
-function ViewProductDetails(){
+function ViewProductDetails({cartItemName, cartItemPrice}){
      const navigate = useNavigate();
      const [name, setName] = useState("")
      const [description, setDescription] = useState("")
@@ -15,6 +16,9 @@ function ViewProductDetails(){
      const [id, setId] = useState("")
      const [quantity, setQuantity] = useState(1)
      const [ modal, setModal ] = useState(true);
+
+     const {addToCart} = useContext(CartContext)
+
      const toggleModal = () => {
           setModal(false)
           if(modal){
@@ -72,7 +76,11 @@ function ViewProductDetails(){
                                              </p>
                                              
                                              <h3 className="view-product-style">&#8369;{price}</h3>
-                                                  <Link to={`/products/${id}/${quantity}/order`}><button className="add-to-cart-btn" onClick={toggleModal}>BUY NOW</button></Link> 
+                                             
+                                             {/* <Link to={`/products/${id}/${quantity}/order`}><button className="add-to-cart-btn" onClick={toggleModal}>BUY NOW</button></Link> */}
+                                             <Link to={`/products`}><button className="add-to-cart-btn" onClick={() =>{addToCart(name, price, id, quantity, url); toggleModal()}}>ADD TO CART</button></Link>
+                                            
+                                                  
                                         </div>
                                         <div className="increment-div">
                                               <i className="increment-btn fa fa-minus" onClick={subtractQuantity}></i>

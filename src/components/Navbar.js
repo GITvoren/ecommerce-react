@@ -3,12 +3,16 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import { useRef, useContext } from 'react';
 import UserContext from '../utilities/UserContext.js';
+import CartContext from '../utilities/CartContext.js';
+import cart from '../assets/images/cart.png';
+import user1212 from '../assets/images/user1212.png';
 
 
 
 function AppNavbar(){
 
      const { user } = useContext(UserContext)
+     const { items }  = useContext(CartContext)
      const ref = useRef(null);
      const ref2 = useRef(null);
      const location = useLocation()
@@ -58,18 +62,18 @@ function AppNavbar(){
                     {
                          ((user.id !== null) && (user.isAdmin === true))
                          ?
-                         <li className="nav-icon"><Link to="/admin"><i className="nav-admin-icon fa fa-gears"><span>&nbsp;ADMIN</span></i></Link></li>
+                         <li className="nav-icon"><Link to="/admin"><i className="nav-admin-icon fa fa-gears"></i></Link></li>
                          :
                          ""
                          }
                          {
                          (user.id !== null)
                          ?
-                         <Link to="/logout"><i className="nav-icon fa fa-sign-out">&nbsp;<span>LOGOUT</span></i></Link>
+                         <Link to="/logout" className="logout-icon"><i className="nav-icon fa fa-sign-out"></i></Link>
                          :
-                         <Link to="/accounts/login"><i className="nav-icon fa fa-user-o"><span>&nbsp;ACCOUNT</span></i></Link>
+                         <Link to="/accounts/login"><img className="user-icon" src={user1212} alt="user" /></Link>
                          }
-                          <Link to="/cart" state={{ background: location }}><i className="nav-icon fa fa-opencart"><span>&nbsp;CART</span></i></Link>
+                          <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{items.length}</p></Link>
                          <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
                          
                     </div>

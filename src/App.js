@@ -154,7 +154,9 @@ function App() {
             
               <Routes>
                   <Route path="/products/:productId" element={<ViewProductDetails />} />     
-              </Routes>  
+              </Routes>
+
+              
 
               <Routes>
                <Route path="/cart" element={<Cart/>} />

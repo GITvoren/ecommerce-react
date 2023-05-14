@@ -101,9 +101,12 @@ body.active-modal {
 .add-to-cart-btn{
     font-size: 15px;
     height: 35px;
-    width: 105px;
+    min-width: 105px;
     border-radius: 3px;
+    padding: 0 8px;
 }
+
+
 
 @media(max-width: 860px){
     .view-product-image{
@@ -195,4 +198,9 @@ body.active-modal {
         bottom: 12%;
         right: 70%;
     }
+}
+
+.view-product-btns-flex{
+    display: flex;
+    gap: 2rem;
 }

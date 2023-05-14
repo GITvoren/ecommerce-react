@@ -6,10 +6,16 @@
      height: 73vh;
 }
 
-.hero-text{
+/* .hero-text{
 
      padding-top: 16rem;
      padding-left: 7rem;
+} */
+
+.hero-text{
+     position: absolute;
+     left: 6rem;
+     top: 15rem;
 }
 
 .hero-text h1{
@@ -48,12 +54,12 @@
 
      .hero-text{
           text-align: center;
-          padding-top: 10rem;
-          padding-right: 5rem;
+          padding-top: 15rem;
+          position: static;
      }
      .hero-text h1{
           font-size: 2rem;
-          padding-bottom: 4rem;
+          padding-bottom: 2rem;
           
      
      }
@@ -68,6 +74,7 @@
    
           font-size: 12px;
           margin-top: 1rem;
+          margin-bottom: 2rem;
      }
 
      
