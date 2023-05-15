@@ -12,7 +12,7 @@ import user1212 from '../assets/images/user1212.png';
 function AppNavbar(){
 
      const { user } = useContext(UserContext)
-     const { items }  = useContext(CartContext)
+     const { cartItems }  = useContext(CartContext)
      const ref = useRef(null);
      const ref2 = useRef(null);
      const location = useLocation()
@@ -73,7 +73,7 @@ function AppNavbar(){
                          :
                          <Link to="/accounts/login"><img className="user-icon" src={user1212} alt="user" /></Link>
                          }
-                          <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{items.length}</p></Link>
+                          <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{cartItems.length}</p></Link>
                          <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
                          
                     </div>

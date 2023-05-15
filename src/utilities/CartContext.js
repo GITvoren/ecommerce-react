@@ -3,22 +3,40 @@ import {createContext, useState} from 'react';
 const CartContext = createContext();
 
 export function CartProvider({children}){
-     const [items, setItems] = useState([]);
+
+          const [cartItems, setCartItems] = useState([])
+          const addToCart = (product) => {
+               const ProductExist = cartItems.find((item) => item._id === product._id);
+               if(ProductExist){
+                    setCartItems(cartItems.map((item) =>
+                    item._id === product._id ?
+                    {...ProductExist, quantity: ProductExist.quantity + 1}: item))
+               } else {
+                    setCartItems([...cartItems, {...product, quantity: 1}])
+               }
+          }
+
+          
+          const removeFromCart = (product) => {
+               const ProductExist = cartItems.find((item) => item._id === product._id);
+               if(ProductExist.quantity === 1){
+                    setCartItems(cartItems.filter((item) => item._id !== product._id));
+               } else {
+                    setCartItems(
+                         cartItems.map((item) => item._id === product._id ? {...ProductExist, quantity: ProductExist.quantity - 1} : item )
+                    )
+               }
+          }
 
 
-     const addToCart = (name, price, _id, quantity, url) => {
-          setItems((prevState) => {
-               return(
-                    [...prevState, { name, price, _id, quantity, url }]
-               )
-          })
+
+          return(
+               <CartContext.Provider value={{setCartItems, cartItems, addToCart, removeFromCart}}>
+                    {children}
+               </CartContext.Provider>
+          )
      }
-     return(
-          <CartContext.Provider value={{items, addToCart}}>
-               {children}
-          </CartContext.Provider>
-     )
-}
+
 
 
 

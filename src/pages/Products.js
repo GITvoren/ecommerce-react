@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Spinner from '../components/Spinner.js';
 
 
-function /* ACITVE PRODUCTS */Products(){
+function Products(){
 
      const [ activeproducts, setActiveProducts] = useState([])
      const [isLoading, setIsLoading] = useState(true)

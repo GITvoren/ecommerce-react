@@ -2,34 +2,24 @@ import '../assets/css/cart.css'
 import CartContext from '../utilities/CartContext.js'
 import {useContext, useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
-import pr300x200 from '../assets/images/pr300x200.png';
+
 import CartItem from '../components/CartItem.js'
 
 
 
 function Cart(){
      const navigate = useNavigate();
-     const [quantity, setQuantity] = useState(1)
-     const {items} = useContext(CartContext)
-     const [cartItems, setCartItems] = useState([])
+     const {cartItems, setCart} = useContext(CartContext);
 
+     const totalPrice = cartItems.reduce((price, item) => price + (item.quantity * item.price), 0)
+
+     useEffect(() => {
+          console.log(cartItems)
+          console.log(totalPrice)
+     })
      
 
 
-
-     useEffect(()=>{
-          setCartItems(items.map((item)=>{
-               
-               
-               return(
-                    <CartItem key={item._id} itemdata= {item} />
-               )
-          }))
-     }, [])
-   
-
- 
- 
 
 
      return(
@@ -39,15 +29,33 @@ function Cart(){
                          <i className="cart-close fa fa-times" onClick={() => navigate(-1)} />
                               <h2>Cart</h2>
                               <br />
-                                   <div className="cart-itemlist">
-       
-                                        {cartItems}
-               
-                                    
+                                   {
+                                   cartItems.length === 0 && 
+                                   <div className="empty-cart">
+                                        <h1>Cart is Empty</h1>
                                    </div>
-                                  
-                             
-                                   
+                                   }
+
+                                   <div className="cart-itemlist">
+                                        {cartItems.map((item) => (
+                                             <CartItem key={item._id} cartitemdata= {item}/>
+                                        ))}
+                                   </div>
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+
+                                   <div className="cart-bottom">
+                                        <h3>Total: <span>&#8369;{totalPrice}</span></h3>
+                                        <div className="checkout-btn-cart">
+                                             <button>CHECKOUT</button>
+                                        </div>
+                                   </div>    
                          </div>
                     </div>
                  
