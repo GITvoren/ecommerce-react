@@ -113,6 +113,10 @@
      right: 0;
 }
 
+.cart-bottom h3 span{
+     font-weight: 600;
+}
+
 
 .empty-cart{
      text-align: center;
