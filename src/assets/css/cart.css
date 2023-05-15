@@ -12,6 +12,9 @@
      overflow: auto;
  }
 
+
+
+
  .cart-container{
     position: absolute;
     right: 0;
@@ -123,3 +126,22 @@
 .empty-cart h1{
      font-family: 'Play', sans-serif;
 }
+
+@media(max-width: 840px){
+
+     .cart-container{
+          top: 10%;
+          right: 0;      
+      }
+
+ }
+
+ @media(max-width: 679px){
+
+     .cart-container{
+          top: 10%;
+          right: 0;
+          left: 0;
+      }
+
+ }

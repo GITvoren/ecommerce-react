@@ -65,16 +65,28 @@ function AppNavbar(){
                          <li className="nav-icon"><Link to="/admin"><i className="nav-admin-icon fa fa-gears"></i></Link></li>
                          :
                          ""
-                         }
-                         {
+                    }
+                    {
                          (user.id !== null)
                          ?
                          <Link to="/logout" className="logout-icon"><i className="nav-icon fa fa-sign-out"></i></Link>
                          :
                          <Link to="/accounts/login"><img className="user-icon" src={user1212} alt="user" /></Link>
-                         }
-                          <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{cartItems.length}</p></Link>
-                         <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
+                    }
+                    {
+                         cartItems.length === 0 
+                         ?
+                         <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /></Link>
+
+                         :
+
+                         <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{cartItems.length}</p></Link>
+                         
+
+                    }
+
+                    <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
+                         
                          
                     </div>
                     
