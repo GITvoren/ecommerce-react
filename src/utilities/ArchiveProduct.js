@@ -28,7 +28,7 @@ function ArchiveProduct(){
 
      useEffect( () => {
 
-     fetch(`${process.env.REACT_APP_API_URL}/${productId}/archive`, {
+     fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/archive`, {
           method: 'PATCH',
           headers: {
                'Content-type': 'Application/json',

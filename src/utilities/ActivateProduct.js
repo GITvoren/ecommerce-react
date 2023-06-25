@@ -22,7 +22,7 @@ function ActivateProduct(){
           });
 
      useEffect(()=> {
-          fetch(`${process.env.REACT_APP_API_URL}/${productId}/activate`, {
+          fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/activate`, {
                method: 'PATCH',
                headers: {
                     'Content-type': 'Application/json',
