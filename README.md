@@ -54,8 +54,10 @@ Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTg
 
 
 ## Upcoming features
-- Add to Cart
+
 - Set user as admin (admin only)
+- Admin Dashboard - Data Visualization (Number of Users and Products in Database)
+- Admin- Upload product image via Cloud (Cloudinary)
 
 ## Feedback
 If you encounter any errors or bugs, have a suggestion, or if you have any questions, please do not hesitate to contact me. Thank you!
