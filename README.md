@@ -4,13 +4,6 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 ###### Note** <br/> This repository is just its frontend. The repository link to its backend API is [here](https://github.com/GITvoren/new-ecommerce-api).
 #### [Live Demo](https://detour-ecommerce.vercel.app/):point_left: (hosted on [Vercel](https://vercel.com/))
 
-
-
-
-
-
-
-
 ## Features
 - Register user to the database
 - Authenticate user login
@@ -21,10 +14,15 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
   - View All Products
   - Archive Product
   - Activate Product
+  - Users / Admin Users Count
+  - Products / Active Products Count
+  - View All Orders
+  - Set User as Admin
   
-- View all active products
-- Set quantity of product to buy
-- Checkout order (authenticated non-admin users only)
+- View Active Products
+- Products Category Query
+- Add to Cart
+- Checkout Order
 
 
 ## Admin Dashboard Screenshots
@@ -54,9 +52,6 @@ Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTg
 
 
 ## Upcoming features
-
-- Set user as admin (admin only)
-- Admin Dashboard - Data Visualization (Number of Users and Products in Database)
 - Admin- Upload product image via Cloud (Cloudinary)
 
 ## Feedback
