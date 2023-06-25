@@ -5,7 +5,6 @@ import Spinner from '../components/Spinner.js';
 
 
 function Products(){
-
      const [ activeproducts, setActiveProducts] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
      const [query, setQuery] = useState("");
