@@ -8,7 +8,7 @@ function OrderSuccess(){
      const navigate = useNavigate();
 
      useEffect(() => {
-          fetch(`${process.env.REACT_APP_API_URL}/users/userdetails`, {
+          fetch(`http://localhost:8066/users/details`, {
                headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                }

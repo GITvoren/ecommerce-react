@@ -12,7 +12,7 @@ function CartItem({cartitemdata}){
           <div className="cart-item">
                <h4>{cartitemdata.name}</h4>
                <div className="image-increment-flexrow">     
-                 <img src= {cartitemdata.url} />   
+                 <img src= {cartitemdata.image} />   
                     <div className="increment-div2">
                       <i className="increment-btn fa fa-minus" onClick={() => removeFromCart(cartitemdata)} ></i>
                     <input

@@ -1,8 +1,8 @@
-import '../assets/css/cart.css'
-import CartContext from '../utilities/CartContext.js'
+import '../assets/css/cart.css';
+import CartContext from '../utilities/CartContext.js';
 import {useContext, useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom'
-import CartItem from '../components/CartItem.js'
+import {useNavigate} from 'react-router-dom';
+import CartItem from '../components/CartItem.js';
 import {toast, Slide} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -64,7 +64,12 @@ function Cart(){
                                    <div className="cart-bottom">
                                         <h3>Total: <span>&#8369;{totalPrice}</span></h3>
                                         <div className="checkout-btn-cart">
-                                             <button onClick={()=> notify()}>CHECKOUT</button>
+                                             {cartItems.length === 0 ?
+                                             <button disabled id="disabledbutton5">CHECKOUT</button>
+                                             :
+                                             <button onClick={()=> navigate('/checkout')}>CHECKOUT</button>
+                                             }
+                                             
                                         </div>
                                    </div>    
                          </div>

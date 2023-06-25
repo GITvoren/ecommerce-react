@@ -6,11 +6,22 @@ import Spinner from '../components/Spinner.js';
 
 function Products(){
 
-     const [ activeproducts, setActiveProducts] = useState([])
-     const [isLoading, setIsLoading] = useState(true)
+     const [ activeproducts, setActiveProducts] = useState([]);
+     const [isLoading, setIsLoading] = useState(true);
+     const [query, setQuery] = useState("");
 
      useEffect(() => {
-          fetch(`${process.env.REACT_APP_API_URL}/products/`)
+
+          const query = window.location.search.substring(1);
+
+          if(query !== ""){
+               setQuery(query)
+          }
+          
+     }, [])
+
+     useEffect(() => {
+          fetch(`${process.env.REACT_APP_API_URL}/products/active?${query}`)
           .then( res => res.json())
           .then( data => {
                setActiveProducts(data.map(activeproduct => {
@@ -21,7 +32,12 @@ function Products(){
 
 		 setIsLoading(false)
           })
+          
      })
+
+ 
+
+
      return(
           <div className="container">
 		{

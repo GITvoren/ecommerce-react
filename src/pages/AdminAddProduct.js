@@ -50,16 +50,17 @@ function AdminAddProduct(){
           })
 
      })
-     .then(res => res.json())
-     .then(data => {
-          if(data === true){
-               notify();
-               navigate('/admin/inventory');
-          } else{
-               
-               alert("Failed. Something went wrong. Please try again later or contact us and let us know.")
-          }
+     .then(res => {
+          if(!res.ok)
+          throw Error("Something went wrong");
+
+          return res.json();
      })
+     .then(data => {
+          notify();
+          navigate('/admin/inventory');
+     })
+     .catch(err => alert(err));
 
     }
 
@@ -69,7 +70,9 @@ function AdminAddProduct(){
                <div className="admin-product-container">
                     <div className="admin-buttons">
                          &nbsp;<Link to="/admin/addproduct"><button>ADD PRODUCT</button>&ensp;</Link>
-                         <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button></Link>
+                         <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button>&ensp;</Link>
+                         <Link to="/admin"><button>SET AN ADMIN</button>&ensp;</Link>
+                          <Link to="/admin"><button>VIEW ORDERS</button></Link>
                     </div>
                     <div>
                          <div className="admin-edit-add-product-card">

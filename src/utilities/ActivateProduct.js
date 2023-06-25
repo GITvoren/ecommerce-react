@@ -22,16 +22,20 @@ function ActivateProduct(){
           });
 
      useEffect(()=> {
-          fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/activate`, {
-               method: 'PUT',
+          fetch(`${process.env.REACT_APP_API_URL}/${productId}/activate`, {
+               method: 'PATCH',
                headers: {
                     'Content-type': 'Application/json',
                     Authorization : `Bearer ${localStorage.getItem('token')}`
                }
           })
-          .then(res => res.json())
+          .then(res => {
+               if(!res.ok)
+               throw Error("Something went wrong.")
+
+               return res.json();
+          })
           .then(data => {
-               if(data === true){
                     notify()
                     navigate("/admin/inventory")
                     /* const timeout = setTimeout(() => {
@@ -39,12 +43,9 @@ function ActivateProduct(){
                        }, 2000);
                        return () => {
                          clearTimeout(timeout);
-                       };  */
-                    
-               } else{
-                    alert('Something went wrong. Try again or contact us to let us know.')
-               }
-          })
+                       };  */      
+               })
+          .catch(err => alert(err))
      })
      return(
           <div>

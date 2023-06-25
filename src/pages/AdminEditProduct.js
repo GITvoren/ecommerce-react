@@ -28,6 +28,18 @@ function AdminEditProduct(){
           theme: "light",
           });
 
+     const notifyerror = (data) => toast.error(data, {
+          position: "top-center",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+  
+          
     useEffect(() => {
           if(name !== "" && description !== "" && price > 0){
                setIsActive(false)
@@ -40,22 +52,17 @@ function AdminEditProduct(){
           fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`)
           .then(res => res.json())
           .then(data => {
-                    console.log(data)
-                    console.log(typeof data.name)
-                    console.log(typeof data.description)
-                    console.log(typeof data.price)
+
                     setName(data.name);
                     setDescription(data.description);
                     setPrice(data.price);
-                    console.log(typeof name)
-                    console.log(typeof description)
-                    console.log(typeof price)
+
                })
           }, [productId])
 
 
-     function editDetails(){
-          fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
+     async function editDetails(){
+          const result = await fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
                method: 'PUT',
                headers: {
                     'Content-type': 'application/json',
@@ -67,18 +74,15 @@ function AdminEditProduct(){
                     price: price
                })
           })
-          .then(res => res.json())
-          .then(data => {
-               if(data === true){
 
-                    notify()
-                    navigate("/admin/inventory");
-               
-               } else{
-                    alert('Failed to update product. Something went wrong. Please contact us about this.')
-               }
-          })
+          const data = await result;
 
+          if(!result.ok){
+               notifyerror(data)
+          } else{
+               notify();
+               navigate("/admin/inventory");
+          }
      }
 
      return(
@@ -87,7 +91,9 @@ function AdminEditProduct(){
                <div className="admin-product-container">
                     <div className="admin-buttons">
                     &nbsp;<Link to="/admin/addproduct"><button>ADD PRODUCT</button>&ensp;</Link>
-                         <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button></Link>
+                         <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button>&ensp;</Link>
+                         <Link to="/admin"><button>SET AN ADMIN</button>&ensp;</Link>
+                          <Link to="/admin"><button>VIEW ORDERS</button></Link>
                     </div>
                     <div>
                          <div className="admin-edit-add-product-card">

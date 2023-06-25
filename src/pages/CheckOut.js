@@ -1,90 +1,179 @@
-import '../assets/css/checkout.css'
-import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState} from 'react';
-import pr280x250 from '../assets/images/pr280x250.png';
+import '../assets/css/checkout.css';
+import { useEffect, useState, useContext} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import OrderItem from '../components/OrderItem.js';
+import CartContext from '../utilities/CartContext.js';
+import UserContext from '../utilities/UserContext.js';
+import { toast, Slide} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function CheckOut(){
 
-     const {productId} = useParams();
-     const {quantity} = useParams();
-     const [name, setName] = useState("");
-     const [price, setPrice] = useState(0);
-     const [url, setUrl] = useState(0);
-     const [totalAmount, setTotalAmount] = useState(0);
-     const [errorMessage, setErrorMessage] = useState("")
      const navigate = useNavigate();
+     const {cartItems, setCartItems} = useContext(CartContext);
+     const {user} = useContext(UserContext);
+     const totalPrice = cartItems.reduce((price, item) => price + (item.quantity * item.price), 0);
 
+     const [address1, setAddress1] = useState("");
+     const [address2, setAddress2] = useState("");
+     const [city, setCity] = useState("");
+     const [province, setProvince] = useState("");
+     const [country, setCountry] = useState("");
+     const [payment, setPayment] = useState("");
+     const [shipmentAddress, setShipmentAddress] = useState("");
 
-     useEffect(()=>{
-          fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`)
-          .then(res => res.json())
-          .then(data => {
-               setName(data.name);
-               setPrice(data.price);
-               setUrl(data.url);
-               setTotalAmount(data.price * quantity);
-          })
-     })
+     useEffect(() => {
+          setShipmentAddress(`${address1} ${address2}, ${city}, ${province} ${country}`);
+     }, [address1, address2, city, province, country])
 
+     const notifyerror = (data) => toast.error(data, {
+          position: "top-center",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+     
+     const placeOrder = async (e) => {
+          e.preventDefault();
 
-     function PlaceOrder(){
-          fetch(`${process.env.REACT_APP_API_URL}/users/checkout`, {
+          if(country == "")
+          return notifyerror("Please specify Country")
+
+          if(city == "")
+          return notifyerror("Please specify City")
+
+          if(province == "")
+          return notifyerror("Please specify Province")
+
+          if(cartItems.length == 0)
+          return notifyerror("Order list is empty!")
+
+          try{
+               const result = await fetch(`${process.env.REACT_APP_API_URL}/orders`, {
                method: 'POST',
                headers: {
-                    'Content-type': 'Application/json',
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                },
                body: JSON.stringify({
-                    productId: productId,
-                    productName: name,
-                    quantity: quantity,
-                    totalAmount: totalAmount
-                         
+                    orderItems: cartItems,
+                    totalAmount: totalPrice,
+                    orderedBy: user.id,
+                    shipmentAddress: shipmentAddress,
+                    paymentMethod: payment
                })
-          })
-          .then(res => res.json())
-          .then(data => {
-               console.log(data);
-               if(data === true){
-                    navigate("/ordersuccess")
+          });
+
+               const data = await result.json();
+               if(!result.ok){
+                    notifyerror(data);
                } else{
-                    setErrorMessage("Admin not allowed!")
+                    setCartItems([]);
+                    navigate('/ordersuccess');
                }
-          })
+
+          }catch{
+               notifyerror('Fetch Error');
+          }  
      }
 
-     
      return(
           <div className="container">
-               <h4 onClick={()=> navigate(-2)} className="cancel">Cancel</h4>
-               {
-            errorMessage 
-            && 
-            (<p className="erroradmin"> {errorMessage} </p>)
-            }
-               <div id="checkout-container">
-                    <img src={url} alt="product img"></img>
-
-                    <div className="flex-me">
-                         <div className="column-me1">
-                              <label>item:</label>
-                              <label>price:</label>
-                              <label>quantity:</label>
-                              <label>Total Amount:</label>
-                              
-                         </div>
-                         <div className="column-me2">
-                              <h4> {name}</h4>
-                              <h4> &#8369;{price}</h4>
-                              <h4> {quantity}</h4>
-                              <h4> &#8369;{price * quantity}</h4>
-                         </div>          
-                    </div>
+               <h1 className="checkout-header">Checkout</h1><br/><br />
+               <h3 className="cancel-order1"><Link to="/products" className="cancel-order"> Cancel Order</Link></h3>
+               <div className="divide">
                     <div>
-                         <button onClick={PlaceOrder}>PROCEED</button>
+                         <div className="ship-address">
+                              <h2>Shipping Address</h2>
+                              <div>
+                                   <label htmlFor="address1">Street Address</label>
+                                   <input type="text"
+                                   id="address1"
+                                   placeholder="Purok / Barangay / Street"
+                                   value={address1}
+                                   onChange={e => setAddress1(e.target.value)} 
+                                   />
+                                   <h6>&nbsp;</h6>
+                                   <input type="text"
+                                   placeholder="House No. / Bldg. / floor, etc."
+                                   value= {address2}
+                                   onChange= {e => setAddress2(e.target.value)} 
+                                   />
+                              </div>
+                              <div>
+                                   <label htmlFor="city">City</label>
+                                   <input type="text"
+                                   id="city"
+                                   value={city}
+                                   onChange={e => setCity(e.target.value)}
+                                   />
+                              </div>
+                              <div>
+                                   <label htmlFor="province">Province</label>
+                                   <input type="text"
+                                   id="province"
+                                   value={province}
+                                   onChange={e => setProvince(e.target.value)}
+                                   />
+                              </div>
+                              <div>
+                                   <label htmlFor="province">Country</label><br />
+                                   <select id="country" value={country} onChange={e => setCountry(e.target.value)}>
+                                        <option selected disabled value=""> Select a Country</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Taiwan">Taiwan</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Vietnam">Vietnam</option>   
+                                   </select>
+                              </div>       
+                         </div>
+                         <div className="payment-methods">
+                              <h2>Payment Method</h2>
+                              <div className="radio" onChange={e => setPayment(e.target.value)}>
+                                   <div>
+                                        <input type="radio" id="cash" name="payment-option" value="cash" />
+                                        <label htmlFor="cash">Cash</label>
+                                   </div>
+                                   <div>
+                                        <input type="radio" id="gcash" name="payment-option" value="gcash" />
+                                        <label htmlFor="gcash"><img src="/images/gcash.png" className="gcash-logo" /></label>
+                                   </div>  
+                              </div>
+                         </div>
                     </div>
-                    
+                    <div className="review-orderitems">
+                         <h2>Review Order Items</h2>
+                         <div className="order-item-list">
+                              {
+                                   cartItems.map(cartItem => {
+                                        return <OrderItem key= {cartItem._id} props = {cartItem} />
+                                   })
+                              }
+                              
+                              <button className="order-btn" onClick={placeOrder}>PLACE ORDER</button>     
+                         </div>
+                         <hr className="hr-order"/>
+                         <div className="order-calc">
+                              <div>
+                                   <p>Subtotal (before delivery fee):</p>
+                                   <p>Delivery Fee:</p> 
+                                   <h3>Order Total:</h3> 
+                              </div>
+                              <div>
+                                   <h4>&#8369;{totalPrice}</h4>
+                                   <p className="delivery">FREE</p> 
+                                   <h3>&#8369;{totalPrice}</h3> 
+                              </div>
+                         </div> 
+                    </div>
                </div>
           </div>
      )

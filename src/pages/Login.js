@@ -9,24 +9,27 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login(){
-     const navigate = useNavigate();
-     const notify = () => toast.success('Login success', {
-          
-          position: "top-center",
-          autoClose: 750,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: "light",
-          });
+     
+     /* toastify alert start */
+          const notify = () => toast.success('Login success', {
+               
+               position: "top-center",
+               autoClose: 750,
+               hideProgressBar: true,
+               closeOnClick: false,
+               pauseOnHover: false,
+               draggable: false,
+               progress: undefined,
+               theme: "light",
+               });
+     /* toastify alert end */            
 
-     const {user, setUser} = useContext(UserContext)
-     const [email, setEmail] = useState("")
-     const [password, setPassword] = useState("")
-     const [errorMessage, setErrorMessage] = useState("")
-     const [isActive, setIsActive] = useState(true)
+     const {user, setUser} = useContext(UserContext);
+     const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+     const [errorMessage, setErrorMessage] = useState("");
+     const [isActive, setIsActive] = useState(true);
+     const navigate = useNavigate();
 
      useEffect(() => {
 
@@ -40,10 +43,10 @@ function Login(){
 
      
 
-     function loginUser(e){
+     async function loginUser(e){
           e.preventDefault();
 
-          fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
+          const result = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
                method: 'POST',
                headers: {
                     'Content-type': 'application/json'
@@ -55,46 +58,35 @@ function Login(){
 
                })
      })
-     .then(res => res.json())
-     .then(data => {
-          console.log(data)
-          if(typeof data.access !== "undefined"){
+          const data = await result.json();
 
-               localStorage.setItem('token', data.access)
-               retrieveUserDetails(data.access);
+          if(!result.ok){
+               setEmail("");
+               setPassword("");
+               return setErrorMessage(data);
+          } else{
                notify();
+               localStorage.setItem('token', data)
+               retrieveUserDetails(data);
                navigate('/');
-          } else {
-               
-               setErrorMessage("Incorrect email or password. Please try again.")
-               
           }
-     })
-
-     setEmail("");
-     setPassword("");
-
 
 }
 
-const retrieveUserDetails = (dataDotAccess_usertoken) => {
-     fetch(`${process.env.REACT_APP_API_URL}/users/userdetails`, {
+const retrieveUserDetails = (accessToken) => {
+     fetch(`${process.env.REACT_APP_API_URL}/users/details`, {
           headers: {
-               Authorization: `Bearer ${dataDotAccess_usertoken}`
+               Authorization: `Bearer ${accessToken}`
           }
      })
      .then(res => res.json())
      .then(data => {
-          console.log(data); 
-
           setUser({
                id: data._id,
                isAdmin: data.isAdmin
           })
-
      })
 }
-
  
 
      return(

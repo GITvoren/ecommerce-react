@@ -7,7 +7,9 @@ import { toast, Slide} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Register(){
-     const notify= () => toast.success("Account created successfully" , {
+
+     /* toastify alert start */
+     const notifysuccess = () => toast.success("Account created successfully" , {
           transition: Slide,
           position: "top-right",
           autoClose: 4000,
@@ -18,6 +20,18 @@ function Register(){
           progress: undefined,
           theme: "light",
           });
+     const notifyerror = (data) => toast.error(data, {
+               position: "top-center",
+               autoClose: false,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,
+               theme: "light",
+               });
+     
+     /* toastify alert end */
 
      const [email, setEmail] = useState("")
      const [firstName, setFirstName] = useState("")
@@ -25,54 +39,20 @@ function Register(){
      const [mobileNo, setMobileNo] = useState("")
      const [password1, setPassword1] = useState("")
      const [password2, setPassword2] = useState("")
-     const [isActive, setIsActive] = useState(true)
-     const [errorMessage, setErrorMessage] = useState("")
-     const [hasError, setHasError] = useState(false)
-
      const navigate= useNavigate();
 
-     useEffect(() => {
 
-          if((email !== "" && password1 !== "" && password2 !== "" && firstName !== "" && lastName !== "" && mobileNo !== "" && ( password1 === password2) && (password1.length > 7) && (mobileNo.length >= 11) && (email.length >= 10)))
-          {
-               setIsActive(true);
-          } else {
-               setIsActive(false);
-          }
-
-     }, [email, password1, password2, firstName, lastName, mobileNo])
-
-     function checkEmailThenRegister(e){
-          e.preventDefault()
-
-          fetch(`${process.env.REACT_APP_API_URL}/users/checkEmail`, {
-               method: 'POST',
-               headers: {
-                    'Content-type': 'application/json'
-               },
-               body: JSON.stringify({
-                    email: email
-               })
-               
-          })
-          .then(res => res.json())
-          .then(data => {
-               console.log(data)
-          if(data === true){
-          setHasError(true)
-          setErrorMessage("An account with this email address already exists.")
-          setEmail("")
-          setPassword1("")
-          setPassword2("")
-          } else{
-          registerUser();
+    async function registerUser(e){
+          e.preventDefault();
           
+          if(password1 !== password2){
+               setPassword1("");
+               setPassword2("");
+               return notifyerror("Password did not match. Try again")
           }
-      })           
- }
-
-     function registerUser(){
-          fetch(`${process.env.REACT_APP_API_URL}/users/register`, {
+          
+          try{
+               const result = await fetch(`${process.env.REACT_APP_API_URL}/users/register`, {
                method: 'POST',
                headers: {
                     'Content-type': 'application/json'
@@ -87,20 +67,23 @@ function Register(){
                
           })
 
-          .then(res => res.json())
-          .then(data => {
-               console.log(data)
-               if(data === true){
-                    notify();
+          const data = await result.json();
 
-                    navigate('/accounts/login');
+          if(!result.ok){
+               notifyerror(data);
+               setPassword1("");
+               setPassword2("");
+          } else{
+               notifysuccess();
+               navigate('/accounts/login');
+          }
+               
+          }catch{
+               notifyerror("Fetch Error")
+          }
+          
 
-               } else {
-                    alert("Something went wrong. Please try again later. ")
-               }
-          })
      }
-
 
      return(
                <div className="container">
@@ -136,14 +119,8 @@ function Register(){
                                    required
                                    id="email"
                                    placeholder="name@example.com" 
-                                   className={hasError ? "text-field-with-error" : " "}
                                    />
                               </div>
-                              {
-                              errorMessage 
-                              && (<p className="error2"> {errorMessage} </p>)
-                              
-                              }
                               <div>
                                    <label htmlFor="mobileNo">MOBILE NO.</label><br />
                                    <input type="number" 
@@ -175,13 +152,8 @@ function Register(){
                               </div>
                               <div>
                               
-                              {
-                              isActive
-                              ?
-                              <button onClick={checkEmailThenRegister}>CREATE ACCOUNT</button>
-                              :
-                              <button id="disabled-btn" disabled>CREATE ACCOUNT</button>
-                              }
+
+                              <button onClick={registerUser}>CREATE ACCOUNT</button>
                                    <label>Already have an account?</label> <Link to="/accounts/login" className="login-here-link">Sign in</Link>
                               </div>  
                          </form>         

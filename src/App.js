@@ -60,7 +60,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/users/userdetails`, {
+    fetch(`${process.env.REACT_APP_API_URL}/users/details`, {
       headers:{
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -75,8 +75,6 @@ function App() {
           id: data._id,
           isAdmin: data.isAdmin
         })
-
-
       } else{
          setUser({
             id: null,
@@ -87,8 +85,6 @@ function App() {
     })
   }, []);
 
-  
-  
 
   useEffect(() => {
    function checkLocalStorage(){
@@ -114,55 +110,42 @@ function App() {
         
           <Navbar />
             <Routes location={background || location}>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/about" element={<About />} />
-
-              <Route element={<AdminRoutes/>}>
-                    <Route exact path="/admin" element={<Admin />}/>
-                    <Route path="/admin/inventory" element={<AdminViewProducts />} />
-                    <Route path="/admin/addproduct" element={<AdminAddProduct />} />
-                    <Route path="/admin/inventory/:productId" element={<AdminEditProduct />} />
-                    <Route path="/admin/inventory/:productId/archive" element={<ArchiveProduct />} />
-                    <Route path="/admin/inventory/:productId/activate" element={<ActivateProduct />} />
-              </Route>  
-
-              
-
-              <Route element={<NonMemberRoutes/>}>
-                  <Route path="/accounts/login" element={<Login/>} />
-                  <Route path="/accounts/register" element={<Register/>} />
-              </Route>
-              <Route exact path="/products" element={<Products/>} />
-             
-             
-      
-              
-              <Route path="/logout" element={<Logout />}/>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
+                
+                <Route element={<AdminRoutes/>}>
+                      <Route exact path="/admin" element={<Admin />}/>
+                      <Route path="/admin/inventory" element={<AdminViewProducts />} />
+                      <Route path="/admin/addproduct" element={<AdminAddProduct />} />
+                      <Route path="/admin/inventory/:productId" element={<AdminEditProduct />} />
+                      <Route path="/admin/inventory/:productId/archive" element={<ArchiveProduct />} />
+                      <Route path="/admin/inventory/:productId/activate" element={<ActivateProduct />} />
+                </Route>
+                
+                <Route element={<MemberRoutes/>}>
+                        <Route path="/checkout" element={<CheckOut />} />
+                        <Route path="/ordersuccess" element={<OrderSuccess />} />
+                </Route>
+                
+                <Route element={<NonMemberRoutes/>}>
+                    <Route path="/accounts/login" element={<Login/>} />
+                    <Route path="/accounts/register" element={<Register/>} />
+                </Route>
+                <Route exact path="/products" element={<Products/>} />
+                <Route path="/logout" element={<Logout />}/>
             </Routes>
             
-             
-                
-           
-              <Routes>
-                <Route element={<MemberRoutes/>}>
-                      <Route path="/products/:productId/:quantity/order" element={<CheckOut />} />
-                      <Route path="/ordersuccess" element={<OrderSuccess />} />
-                </Route>
-              </Routes>
-          
-            
+              {/* View product Modal */}
               <Routes>
                   <Route path="/products/:productId" element={<ViewProductDetails />} />     
               </Routes>
 
-              
-
+              {/* Cart Modal */}
               <Routes>
                <Route path="/cart" element={<Cart/>} />
               </Routes>
          
-
         </CartProvider>
       </UserContext.Provider>
       <ToastContainer

@@ -17,23 +17,7 @@ function ViewProductDetails(){
      const [ modal, setModal ] = useState(true);
      const {addToCart, cartItems} = useContext(CartContext)
      const [product, setProduct] = useState({})
-
-     const [quantity, setQuantity] = useState(1)
-
-     const addQuantity = () =>{
-          if(quantity > 0)
-          setQuantity(quantity + 1)
-     }
-
-     const subtractQuantity = () => {
-          if(quantity > 1){
-               setQuantity(quantity -1)
-          }
-     }
-     
-
  
-    
 
      const toggleModal = () => {
           setModal(false)
@@ -52,7 +36,7 @@ function ViewProductDetails(){
           .then(data => {
                setName(data.name)
                setPrice(data.price)
-               setUrl(data.url)
+               setUrl(data.image)
                setDescription(data.description)
                setId(data._id)
                setProduct(data)
@@ -77,27 +61,8 @@ function ViewProductDetails(){
                                                   {description}
                                              </p>
                                              <h3 className="view-product-style">&#8369;{price}</h3> 
-
-                                             <div className="increment-div">
-                                                  <i className="increment-btn fa fa-minus" onClick={subtractQuantity}></i>
-                                                  <input
-                                                  onKeyDown= {function(e) {
-                                                       e.preventDefault();
-                                                       return false;
-                                                  }}
-                                                  type="number" 
-                                                  className="quantity-btn" 
-                                                  value={quantity}
-                                                  onChange={e => setQuantity(e.target.value)}
-                                                  ></input>
-                                                  <i className="increment-btn fa fa-plus" onClick={addQuantity}></i>
-                                             </div>
-                                             
-                                             <div className="buy-btns">
-                                                  <Link to={`/products/${id}/${quantity}/order`}><button className="add-to-cart-btn" onClick={() =>toggleModal()}>BUY NOW</button></Link>   
-                                                  <Link to={`/products`}><button className="add-to-cart-btn" onClick={() =>{addToCart(product); toggleModal()}}>ADD TO CART</button></Link>   
-                                             </div>
-                                          
+                    
+                                             <Link to={`/products`}><button className="add-to-cart-btn" onClick={() =>{addToCart(product); toggleModal()}}>ADD TO CART</button></Link>   
                                         </div>
                                    </div>         
                               {/* content end */}

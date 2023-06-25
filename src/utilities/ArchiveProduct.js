@@ -28,19 +28,20 @@ function ArchiveProduct(){
 
      useEffect( () => {
 
-     console.log(productId)
-     fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/archive`, {
-          method: 'PUT',
+     fetch(`${process.env.REACT_APP_API_URL}/${productId}/archive`, {
+          method: 'PATCH',
           headers: {
                'Content-type': 'Application/json',
                Authorization : `Bearer ${localStorage.getItem('token')}`
           }
      })
-     .then(res => res.json())
+     .then(res => {
+          if(!res.ok)
+          throw Error("Something went wrong.");
+
+          return res.json();
+     })
      .then(data => {
-          console.log(data);
-          if(data === true){
-               
                notify()
                navigate("/admin/inventory")
                /* const timeout = setTimeout(() => {
@@ -49,10 +50,8 @@ function ArchiveProduct(){
                   return () => {
                     clearTimeout(timeout);
                   };  */
-          } else{
-               alert('Something went wrong. Try again or contact us to let us know.')
-          }
-     })
+          })
+     .catch(err => alert(err))
 }, [])
 
      return(
