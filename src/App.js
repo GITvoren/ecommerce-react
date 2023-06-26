@@ -29,6 +29,7 @@ import OrderSuccess from './utilities/OrderSuccess.js'
 import MemberRoutes from './utilities/MemberRoutes.js'
 import Cart from './pages/Cart.js'
 import {CartProvider} from './utilities/CartContext.js'
+import AdminViewOrders from './pages/AdminViewOrders.js'
 
 
 
@@ -121,6 +122,8 @@ function App() {
                       <Route path="/admin/inventory/:productId" element={<AdminEditProduct />} />
                       <Route path="/admin/inventory/:productId/archive" element={<ArchiveProduct />} />
                       <Route path="/admin/inventory/:productId/activate" element={<ActivateProduct />} />
+                      <Route path="/admin/orders" element={<AdminViewOrders />} />
+
                 </Route>
                 
                 <Route element={<MemberRoutes/>}>

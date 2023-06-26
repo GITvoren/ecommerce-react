@@ -72,7 +72,7 @@ function AdminAddProduct(){
                          &nbsp;<Link to="/admin/addproduct"><button>ADD PRODUCT</button>&ensp;</Link>
                          <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button>&ensp;</Link>
                          <Link to="/admin"><button>SET AN ADMIN</button>&ensp;</Link>
-                          <Link to="/admin"><button>VIEW ORDERS</button></Link>
+                          <Link to="/admin/orders"><button>VIEW ORDERS</button></Link>
                     </div>
                     <div>
                          <div className="admin-edit-add-product-card">
@@ -98,7 +98,6 @@ function AdminAddProduct(){
                                         value={description}
                                         onChange= {e => setDescription(e.target.value)}
                                         />
-                                        input
                                    </div>  
                                    <div>
                                         <label className="console-label">price:</label><br/>
