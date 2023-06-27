@@ -71,7 +71,7 @@ function AdminAddProduct(){
                     <div className="admin-buttons">
                          &nbsp;<Link to="/admin/addproduct"><button>ADD PRODUCT</button>&ensp;</Link>
                          <Link to="/admin/inventory"><button>VIEW ALL PRODUCTS</button>&ensp;</Link>
-                         <Link to="/admin"><button>SET AN ADMIN</button>&ensp;</Link>
+                         <Link to="/admin/setadmin"><button>SET AN ADMIN</button>&ensp;</Link>
                           <Link to="/admin/orders"><button>VIEW ORDERS</button></Link>
                     </div>
                     <div>

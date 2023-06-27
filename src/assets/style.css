@@ -226,6 +226,13 @@ a:-webkit-any-link {
   font-size: 15px;
 }
 
+.console-label2{
+  font-family: 'Rokkitt', serif;
+  color: goldenrod;
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .console-notstring{
 color: rgba(149, 97, 247, 0.918);
 font-size: 12px;

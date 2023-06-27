@@ -52,7 +52,7 @@ function OrderCard({props}){
                <div className="orderitem-list">
                     {
                          orderItems.map(orderItem => (
-                              <div>
+                              <div key={orderItem._id}>
                                    <div>
                                         <label className="console-label">name: </label><br/>
                                         <span className="console-string">'{orderItem.product.name}'</span>

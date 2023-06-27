@@ -30,6 +30,7 @@ import MemberRoutes from './utilities/MemberRoutes.js'
 import Cart from './pages/Cart.js'
 import {CartProvider} from './utilities/CartContext.js'
 import AdminViewOrders from './pages/AdminViewOrders.js'
+import AdminSetUserAdmin from './pages/AdminSetUserAdmin.js'
 
 
 
@@ -123,6 +124,7 @@ function App() {
                       <Route path="/admin/inventory/:productId/archive" element={<ArchiveProduct />} />
                       <Route path="/admin/inventory/:productId/activate" element={<ActivateProduct />} />
                       <Route path="/admin/orders" element={<AdminViewOrders />} />
+                      <Route path="/admin/setadmin" element={<AdminSetUserAdmin />} />
 
                 </Route>
                 
