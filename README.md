@@ -22,7 +22,11 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 - View Active Products
 - Products Category Query
 - Add to Cart
-- Checkout Order
+  -Added Products
+  -Change Product Quantities
+  -Subtotal for Each Item
+  -Total Price for all items
+- Checkout Order (Create Order)
 
 
 ## Admin Dashboard Screenshots
