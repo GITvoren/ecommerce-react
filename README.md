@@ -39,6 +39,8 @@ Edit Product Details <br/> [![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](h
 
 Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/HSccTgf)
 
+View Orders <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/vieworders.HPpbgUu)
+
 ## Built with
 
 
