@@ -31,15 +31,19 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
 
 ## Admin Dashboard Screenshots
 
-View All Products <br/> [![HSc5DNt.md.png](https://iili.io/HSc5DNt.md.png)](https://freeimage.host/i/HSc5DNt)
+View Orders <br/> [![HPpbgUu.md.png](https://iili.io/HPpbgUu.png)](https://freeimage.host/i/vieworders.HPpbgUu)
 
-Add New Product <br/> [![HSc5ZHN.md.png](https://iili.io/HSc5ZHN.md.png)](https://freeimage.host/i/HSc5ZHN)
+View All Products <br/> [![\HPpbUle.md.png](https://iili.io/HPpbUle.png)](https://freeimage.host/i/viewproducts.HPpbUle)
 
-Edit Product Details <br/> [![HSc5tRI.md.png](https://iili.io/HSc5tRI.md.png)](https://freeimage.host/i/HSc5tRI)
+Add New Product <br/> [![HPpbSf9.md.png](https://iili.io/HPpbSf9.png)](https://freeimage.host/i/addproduct.HPpbSf9)
+
+Edit Product <br/> [![HPpyKSn.md.png](https://iili.io/HPpyKSn.png)](https://freeimage.host/i/edit.HPpyKSn)
+
+Set User as Admin <br/> [![HPpbvi7.md.png](https://iili.io/HPpbvi7.png)](https://freeimage.host/i/setadmin.HPpbvi7)
 
 Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/HSccTgf)
 
-View Orders <br/> [![HPpbgUu.md.png](https://iili.io/HPpbgUu.png)](https://freeimage.host/i/vieworders.HPpbgUu)
+
 
 ## Built with
 
