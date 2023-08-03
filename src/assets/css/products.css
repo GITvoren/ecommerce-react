@@ -79,8 +79,26 @@
      
 }
 
+.notice-container{
+     position: relative;
+     border: 1px solid black;
+     max-width: 350px;
+     padding: 1rem;
+     border-radius: 12px;
+     margin: auto;
+}
+
 .notice{
      text-align: center;
      font-size: 18px;
      font-weight: bold;
+}
+
+.notice-container h6{
+     position: absolute;
+     top: 1rem;
+     font-size: 14px;
+     cursor: pointer;
+     transform: translateY(-1rem);
+     right: 0.5rem;
 }
