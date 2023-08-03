@@ -8,6 +8,7 @@ function Products(){
      const [ activeproducts, setActiveProducts] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
      const [query, setQuery] = useState("");
+     const [show, setShow] = useState(true);
 
      useEffect(() => {
 
@@ -42,7 +43,11 @@ function Products(){
 		{
 		 (isLoading)
 		?
-         	 <Spinner />
+          <>
+               <p className="notice">Hello, please expect a 20-30s loading time during this first try (API pre-boot)</p><br />
+               <Spinner />
+          </>
+
 		:
           <>
                <h1 className="products-page-title">Our Products</h1>
