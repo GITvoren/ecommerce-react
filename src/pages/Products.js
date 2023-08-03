@@ -42,8 +42,8 @@ function Products(){
           <div className="container">
           {show &&
           <div className="notice-container">
-               <p className="notice" onClick={setShow(false)}>Hello, please expect a 20-30s loading time during the first try (API pre-boot)</p>
-               <h6>x</h6>
+               <p className="notice">Hello, please expect a 20-30s loading time during the first try (API pre-boot)</p>
+               <h6 onClick={setShow(false)}>x</h6>
           </div>
           }
 		{
