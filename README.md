@@ -2,6 +2,7 @@
 
 This project is an Ecommerce website app built using the MERN stack. (MongoDB, ExpressJS, React, NodeJS)
 ###### Note** <br/> This repository is just its frontend. The repository link to its backend API is [here](https://github.com/GITvoren/new-ecommerce-api).
+Development started at my [Gitlab repo](https://gitlab.com/b247-tejuco/s59-s64/ecommerce_react) before migration.
 #### [Live Demo](https://detour-ecommerce.vercel.app/):point_left: (hosted on [Vercel](https://vercel.com/))
 
 ## Features
