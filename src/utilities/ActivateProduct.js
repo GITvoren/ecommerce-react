@@ -1,4 +1,4 @@
-import { useNavigate, Navigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 import { useEffect } from 'react';
 import {toast, Slide} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,7 +44,7 @@ function ActivateProduct(){
                        return () => {
                          clearTimeout(timeout);
                        };  */      
-               })
+      }, [productId, navigate])
           .catch(err => alert(err))
      })
      return(

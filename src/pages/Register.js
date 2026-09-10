@@ -1,5 +1,5 @@
-import register from '../assets/css/register.css';
-import {useState, useEffect} from 'react'
+import '../assets/css/register.css';
+import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import React from 'react';

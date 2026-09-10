@@ -1,4 +1,4 @@
-import { Navigate, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import React from 'react';
 import {toast, Slide} from 'react-toastify';
@@ -52,7 +52,7 @@ function ArchiveProduct(){
                   };  */
           })
      .catch(err => alert(err))
-}, [])
+      }, [productId, navigate])
 
      return(
           <div>

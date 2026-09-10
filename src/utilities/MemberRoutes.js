@@ -7,7 +7,7 @@ import Login from '../pages/Login.js';
 
 const MemberRoutes = () =>{
 
-     const {user, setUser} = useContext(UserContext)
+     const {user} = useContext(UserContext)
 
      return(
           (user.id !== null)

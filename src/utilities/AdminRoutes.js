@@ -7,7 +7,7 @@ import Home from '../pages/Home.js';
 
 const AdminRoutes = () =>{
 
-     const {user, setUser} = useContext(UserContext)
+     const {user} = useContext(UserContext)
 
      return(
 

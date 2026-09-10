@@ -7,7 +7,7 @@ import Home from '../pages/Home.js';
 
 const NonMemberRoutes = () =>{
 
-     const {user, setUser} = useContext(UserContext)
+     const {user} = useContext(UserContext)
 
      return(
           (user.id !== null)
