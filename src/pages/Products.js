@@ -2,15 +2,17 @@ import products from '../assets/css/products.css'
 import ProductCard from '../components/ProductCard.js'
 import { useState, useEffect } from 'react';
 import Spinner from '../components/Spinner.js';
+import { useLocation } from 'react-router-dom';
 
 
 function Products(){
      const [ activeproducts, setActiveProducts] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
-     const [query, setQuery] = useState("");
+    /*  const [query, setQuery] = useState(""); */
      const [show, setShow] = useState(true);
+     const location = useLocation();
 
-     useEffect(() => {
+/*      useEffect(() => {
 
           const query = window.location.search.substring(1);
 
@@ -18,9 +20,12 @@ function Products(){
                setQuery(query)
           }
           
-     }, [])
+     }, []) */
 
      useEffect(() => {
+
+          const query = location.search.substring(1);
+
           fetch(`${process.env.REACT_APP_API_URL}/products/active?${query}`)
           .then( res => res.json())
           .then( data => {
@@ -33,7 +38,7 @@ function Products(){
 		 setIsLoading(false)
           })
           
-     })
+     }, [location.search])
 
  
 
