@@ -1,6 +1,6 @@
-# Detour — Modern EDC & Travel E-Commerce React App
+# Detour - Travel/EDC E-Commerce React App
 
-**Detour** is a full-stack e-commerce application built to demonstrate end-to-end shopping mechanics, clean architectural UI/UX, and complex state management. Tech stack used is MERN stack. (MongoDB, ExpressJS, React, NodeJS)
+**Detour** is a full-stack e-commerce web application built to demonstrate end-to-end shopping mechanics, clean architectural UI/UX, complex shopping cart state management, seamless client-side routing, user login/registration authentication, an admin management dashboard, and asynchronous API integration. Tech stack used is MERN stack. (MongoDB, ExpressJS, React, NodeJS)
 
 ## Project Goals
 - Master advanced React patterns and state management.
@@ -39,22 +39,6 @@
 
 
 
-## Admin Dashboard Screenshots
-
-View Orders <br/> [![HPpbgUu.md.png](https://iili.io/HPpbgUu.png)](https://freeimage.host/i/vieworders.HPpbgUu)
-
-View All Products <br/> [![\HPpbUle.md.png](https://iili.io/HPpbUle.png)](https://freeimage.host/i/viewproducts.HPpbUle)
-
-Add New Product <br/> [![HPpbSf9.md.png](https://iili.io/HPpbSf9.png)](https://freeimage.host/i/addproduct.HPpbSf9)
-
-Edit Product <br/> [![HPpyKSn.md.png](https://iili.io/HPpyKSn.png)](https://freeimage.host/i/edit.HPpyKSn)
-
-Set User as Admin <br/> [![HPpbvi7.md.png](https://iili.io/HPpbvi7.png)](https://freeimage.host/i/setadmin.HPpbvi7)
-
-Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTgf.md.gif)](https://freeimage.host/i/HSccTgf)
-
-
-
 ## Built with
 
 
@@ -69,7 +53,7 @@ Archive/Activate Product ( gif ) <br/> [![HSccTgf.md.gif](https://iili.io/HSccTg
 - [Unsplash](https://unsplash.com/)
 - [Canva](https://www.canva.com/en_ph/)
 - [Vercel](https://vercel.com/)
-
+- [OpenCode](https://opencode.ai/) w/ Google AI Studio API
 
 ## Upcoming features
 - Admin- Upload product image via Cloud (Cloudinary)
