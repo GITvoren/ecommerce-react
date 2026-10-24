@@ -1,0 +1,163 @@
+.brand-intro {
+  width: 100%;
+  padding: 76px 24px;
+  background: var(--color-background-subtle);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.brand-intro *,
+.brand-intro *::before,
+.brand-intro *::after {
+  box-sizing: border-box;
+}
+
+.brand-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.brand-intro__logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.brand-intro__logo-link:hover {
+  opacity: 0.75;
+}
+
+.brand-intro__logo-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 5px;
+}
+
+.brand-intro__logo {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-intro__tagline {
+  margin: 0 0 17px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-raleway);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+}
+
+.brand-intro__description {
+  max-width: 580px;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.brand-intro__marks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin-top: 27px;
+}
+
+.brand-intro__mark-slot {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 30px;
+}
+
+/*
+ * Replace each empty mark slot with a supplied image when available.
+ * Keep the mark dimensions consistent for a balanced brand row.
+ */
+
+.brand-intro__mark-slot img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .brand-intro {
+    padding: 64px 24px;
+  }
+
+  .brand-intro__inner {
+    max-width: 560px;
+  }
+
+  .brand-intro__description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .brand-intro {
+    padding: 48px 20px;
+  }
+
+  .brand-intro__logo-link {
+    margin-bottom: 18px;
+  }
+
+  .brand-intro__logo {
+    width: 150px;
+  }
+
+  .brand-intro__tagline {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  .brand-intro__description {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .brand-intro__desktop-break {
+    display: none;
+  }
+
+  .brand-intro__marks {
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .brand-intro__mark-slot {
+    width: 36px;
+    height: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-intro__logo-link {
+    transition: none;
+  }
+}

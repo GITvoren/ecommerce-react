@@ -24,6 +24,7 @@ import About from './pages/About.js';
 import ArchiveProduct from './utilities/ArchiveProduct.js'
 import ActivateProduct from './utilities/ActivateProduct.js'
 import ViewProductDetails from './components/ViewProductDetails.js'
+import Footer from './components/Footer.jsx'
 import CheckOut from './pages/CheckOut.js'
 import OrderSuccess from './utilities/OrderSuccess.js'
 import MemberRoutes from './utilities/MemberRoutes.js'
@@ -150,6 +151,7 @@ function App() {
               <Routes>
                <Route path="/cart" element={<Cart/>} />
               </Routes>
+              <Footer />
          
         </CartProvider>
       </UserContext.Provider>

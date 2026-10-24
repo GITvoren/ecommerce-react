@@ -1,101 +1,129 @@
-import navbar from '../assets/css/navbar.css';
 import { Link, useLocation } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import '../assets/css/navbar.css';
 import logo from '../assets/images/logo.png';
-import { useRef, useContext } from 'react';
-import UserContext from '../utilities/UserContext.js';
-import CartContext from '../utilities/CartContext.js';
 import cart from '../assets/images/cart.png';
 import user1212 from '../assets/images/user1212.png';
+import UserContext from '../utilities/UserContext.js';
+import CartContext from '../utilities/CartContext.js';
 
+function AppNavbar() {
+  const { user } = useContext(UserContext);
+  const { cartItems } = useContext(CartContext);
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const isLoggedIn = user?.id != null;
+  const isAdmin = isLoggedIn && user?.isAdmin === true;
+  const cartCount = cartItems?.length ?? 0;
 
-function AppNavbar(){
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname, location.search]);
 
-     const { user } = useContext(UserContext)
-     const { cartItems }  = useContext(CartContext)
-     const ref = useRef(null);
-     const ref2 = useRef(null);
-     const location = useLocation()
-     let Toggled = false
-     
-     const toggle = (e) =>{
-          e.preventDefault()
-          const navList = ref.current
-          const toggleBtn = ref2.current
-          if(Toggled){
-               navList.style.top= '-200%'
-               toggleBtn.classList.toggle('fa-bars')
-               Toggled= false;
-               toggleBtn.classList.toggle('fa-times')
-     
-          } else{
-               navList.style.top= '11%';
-               toggleBtn.classList.toggle('fa-times')
-               Toggled= true
-               toggleBtn.classList.toggle('fa-bars')
-          }
-     };
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
 
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setIsMenuOpen(false);
+    };
 
-     return(
-          
-          <nav>
-               <ul>
-                    <div>
-                     <Link to="/"><img src={logo} className="nav-logo" alt="logo"></img></Link>
-                     
-                    </div>
-                    
-                   
-                    <div ref={ref}>
-                    
-                         <li><Link to ="/" className="nav-list">HOME</Link></li>
-                         <li><Link to="/products" className="nav-list">PRODUCTS</Link></li>
-                         <li><Link to="/contact" className="nav-list">CONTACT</Link></li>
-                         <li><Link to="/about" className="nav-list">ABOUT</Link></li>
-                         
-                        
-                    </div>
-            
-                    
-                    <div>
-                    {
-                         ((user.id !== null) && (user.isAdmin === true))
-                         ?
-                         <li className="nav-icon"><Link to="/admin"><i className="nav-admin-icon fa fa-gears"></i></Link></li>
-                         :
-                         ""
-                    }
-                    {
-                         (user.id !== null)
-                         ?
-                         <Link to="/logout" className="logout-icon"><i className="nav-icon fa fa-sign-out"></i></Link>
-                         :
-                         <Link to="/accounts/login"><img className="user-icon" src={user1212} alt="user" /></Link>
-                    }
-                    {
-                         cartItems.length === 0 
-                         ?
-                         <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /></Link>
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [isMenuOpen]);
 
-                         :
+  const closeMenu = () => setIsMenuOpen(false);
 
-                         <Link to="/cart" state={{ background: location }} className="cart-a"><img className="cart-icon" src={cart} alt="cart" /><p className="cart-number-nav">{cartItems.length}</p></Link>
-                         
+  return (
+    <nav className="detour-navbar" aria-label="Main navigation">
+      <div className="detour-navbar__inner">
+        <Link to="/" className="detour-navbar__brand" aria-label="Detour home" onClick={closeMenu}>
+          <img src={logo} className="nav-logo" alt="Detour" />
+        </Link>
 
-                    }
+        <div
+          id="detour-primary-navigation"
+          className={`detour-navbar__links${isMenuOpen ? ' is-open' : ''}`}
+        >
+          <Link to="/" className="nav-list" onClick={closeMenu}>Home</Link>
+          <Link to="/products" className="nav-list" onClick={closeMenu}>Products</Link>
+          <Link to="/contact" className="nav-list" onClick={closeMenu}>Contact</Link>
+          <Link to="/about" className="nav-list" onClick={closeMenu}>About</Link>
 
-                    <i ref={ref2} onClick={toggle} className="nav-toggle fa fa-bars"></i>
-                         
-                         
-                    </div>
-                    
-               </ul>
-          </nav>
-                 
-     )
+          <div className="detour-navbar__mobile-account">
+            {isAdmin && (
+              <Link to="/admin" className="detour-navbar__mobile-link" onClick={closeMenu}>
+                <i className="fa fa-gears" aria-hidden="true" />
+                <span>Admin dashboard</span>
+              </Link>
+            )}
+            {isLoggedIn ? (
+              <Link to="/logout" className="detour-navbar__mobile-link" onClick={closeMenu}>
+                <i className="fa fa-sign-out" aria-hidden="true" />
+                <span>Log out</span>
+              </Link>
+            ) : (
+              <Link to="/accounts/login" className="detour-navbar__mobile-link" onClick={closeMenu}>
+                <i className="fa fa-user" aria-hidden="true" />
+                <span>Sign in</span>
+              </Link>
+            )}
+            <Link
+              to="/cart"
+              state={{ background: location }}
+              className="detour-navbar__mobile-link"
+              onClick={closeMenu}
+            >
+              <i className="fa fa-shopping-bag" aria-hidden="true" />
+              <span>Shopping cart{cartCount > 0 ? ` (${cartCount})` : ''}</span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="detour-navbar__actions">
+          {isAdmin && (
+            <Link to="/admin" className="detour-navbar__icon-link" aria-label="Admin dashboard" title="Admin dashboard">
+              <i className="nav-admin-icon fa fa-gears" aria-hidden="true" />
+            </Link>
+          )}
+
+          {isLoggedIn ? (
+            <Link to="/logout" className="detour-navbar__icon-link logout-icon" aria-label="Log out" title="Log out">
+              <i className="nav-icon fa fa-sign-out" aria-hidden="true" />
+            </Link>
+          ) : (
+            <Link to="/accounts/login" className="detour-navbar__icon-link" aria-label="Sign in" title="Sign in">
+              <img className="user-icon" src={user1212} alt="" />
+            </Link>
+          )}
+
+          <Link
+            to="/cart"
+            state={{ background: location }}
+            className="detour-navbar__icon-link cart-a"
+            aria-label={`Shopping cart${cartCount > 0 ? `, ${cartCount} items` : ''}`}
+            title="Shopping cart"
+          >
+            <img className="cart-icon" src={cart} alt="" />
+            {cartCount > 0 && <span className="cart-number-nav">{cartCount}</span>}
+          </Link>
+
+          <button
+            type="button"
+            className={`nav-toggle${isMenuOpen ? ' is-open' : ''}`}
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-controls="detour-primary-navigation"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span className="nav-toggle__line" />
+            <span className="nav-toggle__line" />
+            <span className="nav-toggle__line" />
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 }
-
-
 
 export default AppNavbar;

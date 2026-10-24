@@ -109,8 +109,8 @@
             z-index: 123;
           }
 
-          .container{
-            margin-top: 3rem;
+          .container, .home-container, .contact-page, .about-page, .products-page{
+            margin-top: 4.2rem;
          }
       }
 
@@ -396,12 +396,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #55a8fb;
+  background: #349474;
   border-radius: 100px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #70b7ff;
+  background: #5dd1ab;
 }
 
 

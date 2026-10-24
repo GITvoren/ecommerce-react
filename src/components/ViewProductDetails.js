@@ -56,7 +56,7 @@ function ViewProductDetails(){
                                    <div className="view-panel">
                                         <img className="view-product-image" src={url} alt="product"></img>
                                         <div className="view-right-panel">
-                                             <h5 className="view-product-style">&nbsp;&nbsp;&nbsp;&nbsp;{name}</h5>
+                                             <h5 className="view-product-style">{name}</h5>
                                              <p>
                                                   {description}
                                              </p>

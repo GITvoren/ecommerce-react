@@ -1,6 +1,12 @@
-# Ecommerce React App
+# Detour — Modern EDC & Travel E-Commerce React App
 
-This project is an Ecommerce website app built using the MERN stack. (MongoDB, ExpressJS, React, NodeJS)
+**Detour** is a full-stack e-commerce application built to demonstrate end-to-end shopping mechanics, clean architectural UI/UX, and complex state management. Tech stack used is MERN stack. (MongoDB, ExpressJS, React, NodeJS)
+
+## Project Goals
+- Master advanced React patterns and state management.
+- Implement production-grade e-commerce flows (Cart, Checkout).
+- Build a dedicated Admin Dashboard for product inventory and order management.
+
 ###### Note** <br/> This repository is just its frontend. The repository link to its backend API is [here](https://github.com/GITvoren/new-ecommerce-api).
 
 #### [Live Demo](https://detour-ecommerce.vercel.app/):point_left: (hosted on [Vercel](https://vercel.com/))
@@ -21,13 +27,16 @@ This project is an Ecommerce website app built using the MERN stack. (MongoDB, E
   - Set User as Admin
   
 - View Active Products
+- Dynamic Hero Banners
 - Products Category Query
+- Persistent Shopping Cart
 - Add to Cart
   - Added Products
   - Change Product Quantities
   - Subtotal for Each Item
   - Total Price for all items
 - Checkout Order (Create Order)
+
 
 
 ## Admin Dashboard Screenshots

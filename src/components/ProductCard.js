@@ -25,7 +25,7 @@ function ProductCard({activeproductdata}){
                <div className="product-card">
                     <img className="product-image" src={image} alt="product img"></img>
 
-                    <h5 className="product-style">&nbsp;&nbsp;&nbsp;&nbsp;{name}</h5>
+                    <h5 className="product-style">{name}</h5>
                     <div className="product-detail">        
                          
                          <h3 className="product-style">&#8369;{price}</h3>
