@@ -1,3 +1,6 @@
+<img width="1411" height="638" alt="adminEditProduct" src="https://github.com/user-attachments/assets/584c0f07-65d4-4e37-995e-29c388d60936" />
+<img width="1280" height="720" alt="adminActivateProduct" src="https://github.com/user-attachments/assets/1c91a524-9c2f-430e-8958-75a6951a85d4" />
+<img width="1280" height="720" alt="adminArchiveProduc" src="https://github.com/user-attachments/assets/653076f9-6fbe-4509-a93f-d6a07b2a2707" />
 
 
 
@@ -60,6 +63,25 @@
 **Add New Product**
 <br>
 <img src="https://github.com/user-attachments/assets/f6cfc636-1a98-48ab-ab0f-da19ef42e31e" alt="adminAddNewProduct" width="100%">
+
+<br>
+
+**Edit Product Details**
+<br>
+<img src="https://github.com/user-attachments/assets/584c0f07-65d4-4e37-995e-29c388d60936" alt="adminEditProduct" width="100%">
+
+<br>
+
+**Archive Product**
+<br>
+<img src="https://github.com/user-attachments/assets/653076f9-6fbe-4509-a93f-d6a07b2a2707" alt="adminArchiveProduct" width="100%">
+
+<br>
+
+**Activate Product**
+<br>
+<img src="https://github.com/user-attachments/assets/1c91a524-9c2f-430e-8958-75a6951a85d4" alt="adminActivateProduct" width="100%">
+
 
 <br>
 
