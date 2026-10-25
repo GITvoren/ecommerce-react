@@ -1,11 +1,3 @@
-<img width="1411" height="638" alt="adminEditProduct" src="https://github.com/user-attachments/assets/584c0f07-65d4-4e37-995e-29c388d60936" />
-<img width="1280" height="720" alt="adminActivateProduct" src="https://github.com/user-attachments/assets/1c91a524-9c2f-430e-8958-75a6951a85d4" />
-<img width="1280" height="720" alt="adminArchiveProduc" src="https://github.com/user-attachments/assets/653076f9-6fbe-4509-a93f-d6a07b2a2707" />
-
-
-
-
-
 # Detour - Travel/EDC E-Commerce React App
 
 **Detour** is a full-stack e-commerce web application built to demonstrate end-to-end shopping mechanics, clean architectural UI/UX, complex shopping cart state management, seamless client-side routing, user login/registration authentication, an admin management dashboard, and asynchronous API integration. Tech stack used is MERN stack. (MongoDB, ExpressJS, React, NodeJS)
